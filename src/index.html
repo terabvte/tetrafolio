@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-black text-white">
+  <body class="bg-black text-white font-[Montserrat]">
     <nav class="p-4 flex gap-4 justify-between items-center border-b">
-      <img class="w-24" src="../assets/keyboard.png" alt="Logo" />
+      <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
       <div class="gap-2">
         <button
           class="cursor-pointer hover:bg-blue-500 rounded-lg bg-white text-black border p-1"
@@ -37,29 +43,45 @@
         </button>
       </div>
     </nav>
-    <section class="flex items-center justify-center p-16 gap-16">
+    <section class="flex items-center p-16 gap-16 max-w-7xl mx-auto">
       <img
-        src="data:image/jpeg;base64,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"
-        class="border-3 border-blue-500 rounded-[35%] "
+        src="../assets/matei.png"
+        class="border-3 border-blue-500 rounded-[47%] w-1/4"
         alt="avatar"
       />
       <!-- per far funzionare l'immagine (a supposta): object-contain  h-64 w-48 -->
       <div>
-        <h2 class="font-bold text-xl">Hi there! I'm</h2>
-        <h2>
-          <span><img src="" alt="location" /></span>Verona, Italy
-        </h2>
-        <h1>Matei Ovidiu Serban</h1>
-        <p>
+        <div class="flex gap-96">
+          <h2 class="font-bold text-xl">Hi there! I'm</h2>
+          <div class="flex items-center">
+            <img
+              class="filter invert w-6 h-6"
+              src="../assets/location.png"
+              alt=""
+            />
+            <h2 class="ml-2 font-bold text-xl">Verona, Italy</h2>
+          </div>
+        </div>
+        <h1
+          class="text-7xl mt-4 font-semibold bg-gradient-to-r from-white to-blue-400 inline-block text-transparent bg-clip-text tracking-tighter"
+        >
+          Matei Ovidiu Serban
+        </h1>
+        <p class="text-lg font-medium">
           Currently a computer science student, fascinated by every field
-          related to technology, from development to emerging innovations.
+          related to <br />
+          technology, from development to emerging innovations.
         </p>
-        <div>
-          <img src="" alt="github" />
-          <img src="" alt="mail" />
+        <div class="mt-8 flex gap-12 items-center">
+          <a class="w-12" href="https://github.com/Matt-Onella" target="_blank">
+            <img src="../assets/github.png" alt="github">
+          </a>
+          <a class="w-12" href="mailto:mateiovidiuserban@gmail.com" taget="_blank">
+            <img src="../assets/mail.png" alt="mail">
+          </a>
         </div>
       </div>
     </section>
-    <div class="h-1 w-full bg-linear-to-r from-cyan-500 to-blue-500"></div>
+    <div class="mt-4 h-1 w-full bg-linear-to-r from-cyan-500 to-blue-500"></div>
   </body>
 </html>
