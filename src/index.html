@@ -38,41 +38,40 @@
           Jun Bao Matteo Qiu
         </button>
         <button
-          class="prova"
+          class="cursor-pointer ml-4 rounded-lg bg-[#2c2c2c] text-green-700 border-black p-1.5 px-4"
         >
+          Change it up
         </button>
       </div>
     </nav>
-    <section class="flex items-center p-16 gap-16 max-w-7xl mx-auto">
+    <section class="flex justify-center items-center p-4 sm:p-16 gap-16 max-w-7xl mx-auto flex-col sm:flex-row">
       <img
         src="../assets/matei.png"
-        class="border-5 border-blue-300 rounded-[47%] w-1/4"
+        class="border-5 border-blue-300 rounded-[47%] lg:w-[250px] w-[200px]"
         alt="avatar"
       />
-      <!-- per far funzionare l'immagine (a supposta): object-contain  h-64 w-48 -->
-      <div>
-        <div class="flex gap-96">
-          <h2 class="font-bold text-xl">Hi there! I'm</h2>
+      <div class="w-[70%]">
+        <div class="flex flex-col flex-col-reverse md:flex-col-reverse md:flex-row gap-[25%] justify-between md:items-center w-[80%]">
+          <h2 class="font-bold text-lg lg:text-xl whitespace-nowrap mt-4 md:m-0">Hi there! I'm</h2>
           <div class="flex items-center">
             <img
               class="filter invert w-6 h-6"
               src="../assets/location.png"
               alt=""
             />
-            <h2 class="ml-2 font-bold text-xl">Verona, Italy</h2>
+            <h2 class="font-bold text-xl whitespace-nowrap">Verona, Italy</h2>
           </div>
         </div>
         <h1
-          class="text-7xl mt-4 font-semibold bg-gradient-to-r from-white to-blue-300 inline-block text-transparent bg-clip-text tracking-tighter"
+          class="xl:text-7xl sm:text-4xl text-3xl md:text-5xl lg:text-6xl mt-4 font-semibold bg-gradient-to-r from-white to-blue-300 inline-block text-transparent bg-clip-text tracking-tighter whitespace-nowrap"
         >
           Matei Ovidiu Serban
         </h1>
-        <p class="text-lg font-medium">
+        <p class="text-lg font-medium sm:w-[80%]">
           Currently a computer science student, fascinated by every field
-          related to <br />
-          technology, from development to emerging innovations.
+          related to technology, from development to emerging innovations.
         </p>
-        <div class="mt-8 flex gap-12 items-center">
+        <div class="mt-8 flex gap-12 items-center w-full justify-center sm:justify-start">
             <a class="w-12" href="https://github.com/Matt-Onella" target="_blank">
               <img src="../assets/github.png" alt="github" />
             </a>
@@ -89,8 +88,8 @@
     </section>
     <div class="mt-4 h-1 w-full bg-linear-to-r from-cyan-300 to-blue-500"></div>
 
-    <section class="lg:relative Figmaballs lg:h-200 p-12 overflow-hidden w-screen min-w-full">
-      <h1 class="flex justify-center font-bold text-4xl -mt-4 mb-8 lg:mb-0">Skills</h1>
+    <section class="lg:relative Figmagradient lg:h-200 p-12 overflow-hidden w-screen min-w-full">
+      <h1 class="text-center font-bold text-4xl -mt-4 mb-8 lg:mb-0">Skills</h1>
 
       <aside
         class="lg:absolute md:mx-auto lg:top-25 xl:top-32 2xl:left-[23%] xl:left-[23%] lg:left-[23%] md:left-[23%] lg:w-[25%] md:w-[75%] bg-black/70 p-4 border-5 rounded-xl shadow-2xl mb-8 lg:mb-0"
@@ -139,28 +138,40 @@
     </aside>
   </section>
   <div class="h-1 w-full bg-linear-to-r from-cyan-300 to-blue-500"></div>
-<h1>Jesse we cook need</h1>
-  </body>
-  <footer>
-    <div class="absolute left-[50%] mt-8 flex items-center gap-4">
-      <a class="w-7" href="https://github.com/Matt-Onella" target="_blank">
+  <section class="bg-[#09090b] h-[80%]">
+    <h1 class="text-center font-bold text-4xl p-8 mb-8">Projects</h1>
+    <div class="p-4 flex justify-center gap-16 flex-col flex-col-reverse lg:flex-row items-center">
+        <img class="w-[75%] md:w-[50%] lg:w-[35%]  object-contain" src="../assets/maze.png" alt="Image of a Maze Game">
+        <div class="lg:w-[25%] w-[80%] border-4 rounded-xl p-6 lg:h-[10%]">
+            <h2 class="text-2xl font-bold mb-2">Maze Game</h2>
+            <p>A simple interactive mini-game developed in Python. Future improvements might include Wilson’s algorithm or the “Recursive Back tracker” algorithm to generate the maze each time.</p>
+        </div>
+    </div>
+  </section>
+  <footer class="p-8">
+    <div class="mt-8 flex items-center justify-center gap-16 mb-6">
+        <a class="w-12" href="https://github.com/Matt-Onella" target="_blank">
         <img src="../assets/github.png" alt="github" />
+        </a>
+        <a
+        class="w-12"
+        href="mailto:mateiovidiuserban@gmail.com"
+        taget="_blank"
+        >
+        <img src="../assets/mail.png" alt="mail" />
       </a>
-    </a>
-    <a
-      class="w-7"
-      href="mailto:mateiovidiuserban@gmail.com"
-      taget="_blank"
-    >
-      <img src="../assets/mail.png" alt="mail" />
-    </a>
-    <a
-    class="w-7"
-    href=""
-    taget="_blank"
-  >
-    <img src="../assets/document.png" alt="curiculum" />
-  </a>
-  </div>
-  </footer>
+      <a
+      class="w-12"
+      href=""
+      target="_blank"
+      >
+      <img src="../assets/document.png" alt="curiculum" />
+      </a>
+    </div>
+    <div class="flex justify-center flex-col">
+        <h3 class="text-center font-medium mb-2">Reach out to me at:</h3>
+        <button class="mx-auto text-center bg-white rounded-lg text-black p-2 px-4">Link to the form</button>
+    </div>
+    </footer>
+</body>
 </html>
