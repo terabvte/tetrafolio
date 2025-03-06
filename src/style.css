@@ -1,62 +1,17 @@
-.Figmaballs {
-    background: linear-gradient(300deg, red, blue, green, orange);
-    background-size: 180%, 180%;
-    animation: gradient-animation 18s ease infinite;
+.Figmagradient {
+  background: linear-gradient(300deg, red, blue, green, orange);
+  background-size: 180%, 180%;
+  animation: gradient-animation 10s ease infinite;
 }
 
 @keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
+  0% {
+      background-position: 0% 70%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100%{
+      background-position: 0% 80%;
+  }
 }
-.prova {
-    width: 130px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(to right,#494844,#353330,#93918c,#605e5b,#52514e,rgb(58, 58, 55));
-    background-size: 250%;
-    background-position: center;
-    color: #050301;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition-duration: 1s;
-    overflow: hidden;
-  }
-
-  .prova::before {
-    content: "Change it up";
-    color: rgb(7, 132, 38);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 97%;
-    height: 90%;
-    border-radius: 8px;
-    transition-duration: 1s;
-    background-color: rgba(0, 0, 0, 0.842);
-    background-size: 200%;
-  }
-
-  .prova:hover {
-    background-position: right;
-    transition-duration: 1s;
-  }
-
-  .prova:hover::before {
-    background-position: right;
-    transition-duration: 1s;
-  }
-
-  .prova:active {
-    transform: scale(0.95);
-  }
