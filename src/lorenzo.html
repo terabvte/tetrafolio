@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tetrafolio: Lorenzo</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,35 +15,61 @@
   </head>
   <body class="bg-black text-white font-[Montserrat]">
     <nav class="p-4 flex gap-4 justify-between items-center border-b">
-      <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
-      <div class="gap-2">
-        <button
-          class="cursor-pointer hover:bg-blue-500 rounded-lg bg-white text-black border p-1"
-        >
-        Matei Ovidiu Serban
+        <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+
+        <!-- Desktop menu - visible on lg screens and above -->
+        <div class="hidden lg:flex gap-2">
+          <button class="cursor-pointer hover:bg-blue-500 rounded-lg bg-white text-black border p-1">
+            Matei Ovidiu Serban
+          </button>
+          <button class="cursor-pointer hover:bg-red-500 rounded-lg bg-white text-black border p-1">
+            Lorenzo Faccio
+          </button>
+          <button class="cursor-pointer hover:bg-green-500 rounded-lg bg-white text-black border p-1">
+            Marco Fediuc
+          </button>
+          <button class="cursor-pointer hover:bg-yellow-400 rounded-lg bg-white text-black border p-1">
+            Jun Bao Matteo Qiu
+          </button>
+          <button class="cursor-pointer ml-4 rounded-lg bg-[#2c2c2c] text-green-700 border-black p-1.5 px-4">
+            Change it up
+          </button>
+        </div>
+
+        <!-- Hamburger button - visible below lg screens -->
+        <button id="hamburger-button" class="lg:hidden flex flex-col justify-center items-center bg-white cursor-pointer p-2 rounded-md">
+          <span class="block w-6 h-[3px] bg-black mb-1"></span>
+          <span class="block w-6 h-[3px] bg-black mb-1"></span>
+          <span class="block w-6 h-[3px] bg-black mb-1"></span>
         </button>
-        <button
-          class="cursor-pointer hover:bg-red-500 rounded-lg bg-white text-black border p-1"
-        >
-          Lorenzo Faccio
-        </button>
-        <button
-          class="cursor-pointer hover:bg-green-500 rounded-lg bg-white text-black border p-1"
-        >
-          Marco Fediuc
-        </button>
-        <button
-          class="cursor-pointer hover:bg-yellow-400 rounded-lg bg-white text-black border p-1"
-        >
-          Jun Bao Matteo Qiu
-        </button>
-        <button
-          class="cursor-pointer ml-4 rounded-lg bg-[#2c2c2c] text-green-700 border-black p-1.5 px-4"
-        >
-          Change it up
-        </button>
+      </nav>
+
+      <!-- Mobile menu - hidden by default -->
+      <div id="mobile-menu" class="fixed inset-0 bg-[#1c1c1c] text-white z-50 hidden pt-4 lg:hidden">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center">
+            <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+            <button id="close-menu" class="text-3xl bg-white text-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer">&times;</button>
+          </div>
+          <div class="flex flex-col gap-4 mt-8">
+            <button class="cursor-pointer hover:bg-blue-500 rounded-lg bg-white text-black border p-2 w-full text-left">
+              Matei Ovidiu Serban
+            </button>
+            <button class="cursor-pointer hover:bg-red-500 rounded-lg bg-white text-black border p-2 w-full text-left">
+              Lorenzo Faccio
+            </button>
+            <button class="cursor-pointer hover:bg-green-500 rounded-lg bg-white text-black border p-2 w-full text-left">
+              Marco Fediuc
+            </button>
+            <button class="cursor-pointer hover:bg-yellow-400 rounded-lg bg-white text-black border p-2 w-full text-left">
+              Jun Bao Matteo Qiu
+            </button>
+            <button class="cursor-pointer rounded-lg bg-[#2c2c2c] text-green-700 border-black p-2 w-full text-left">
+              Change it up
+            </button>
+          </div>
+        </div>
       </div>
-    </nav>
     <section class="flex justify-center items-center p-4 sm:p-16 gap-16 max-w-7xl mx-auto flex-col sm:flex-row">
       <img
         src="../assets/lorenzo.jpeg"
@@ -184,6 +210,38 @@ By using Git alongside GitHub the possibility to work with other developer by sa
         <button class="mx-auto text-center bg-white rounded-lg text-black p-2 px-4">Link to the form</button>
     </div>
     </footer>
-    <script src=""></script>
+    <script>
+        // script.js
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerButton = document.getElementById("hamburger-button");
+        const closeMenuButton = document.getElementById("close-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        
+        // Function to open menu
+        function openMenu() {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("block");
+          document.body.classList.add("overflow-hidden");
+        }
+    
+        // Function to close menu
+        function closeMenu() {
+          mobileMenu.classList.remove("block");
+          mobileMenu.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+    
+        hamburgerButton.addEventListener("click", openMenu);
+        closeMenuButton.addEventListener("click", closeMenu);
+    
+        // Handle resize events
+        window.addEventListener("resize", function () {
+          // If window width is lg breakpoint (1024px) or larger and menu is open, close it
+          if (window.innerWidth >= 1024 && mobileMenu.classList.contains("block")) {
+            closeMenu();
+          }
+        });
+    });
+    </script>
 </body>
 </html>
