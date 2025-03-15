@@ -1,46 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact me</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./output.css" />
   </head>
-  <body class="bg-black text-white font-[Montserrat]">
-    <nav class="p-4 flex gap-4 justify-between items-center border-b">
+  <body class="bg-black font-[Montserrat] text-white">
+    <nav class="flex items-center justify-between gap-4 border-b p-4">
       <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
 
       <!-- Desktop menu - visible on lg screens and above -->
-      <div class="hidden lg:flex gap-2">
+      <div class="hidden gap-2 lg:flex">
         <button
-          class="cursor-pointer hover:bg-blue-500 rounded-lg bg-white text-black border p-1"
+          class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-blue-500"
         >
           Matei Ovidiu Serban
         </button>
         <button
-          class="cursor-pointer hover:bg-red-500 rounded-lg bg-white text-black border p-1"
+          class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-red-500"
         >
           Lorenzo Faccio
         </button>
         <button
-          class="cursor-pointer hover:bg-green-500 rounded-lg bg-white text-black border p-1"
+          class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-green-500"
         >
           Marco Fediuc
         </button>
         <button
-          class="cursor-pointer hover:bg-yellow-400 rounded-lg bg-white text-black border p-1"
+          class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-yellow-400"
         >
           Jun Bao Matteo Qiu
         </button>
         <button
-          class="cursor-pointer ml-4 rounded-lg bg-[#2c2c2c] text-green-700 border-black p-1.5 px-4"
+          class="rounded-x1 ml-4 overflow-hidden rounded-lg border-2 border-white bg-[#258a1a] p-1.5 px-4 text-[15px] font-bold text-[#131313] duration-800 hover:bg-[#258a1a] hover:text-white hover:shadow-[0_2px_0_2px_#258a1a]"
         >
           Change it up
         </button>
@@ -49,52 +48,52 @@
       <!-- Hamburger button - visible below lg screens -->
       <button
         id="hamburger-button"
-        class="lg:hidden flex flex-col justify-center items-center bg-white cursor-pointer p-2 rounded-md"
+        class="flex cursor-pointer flex-col items-center justify-center rounded-md bg-white p-2 lg:hidden"
       >
-        <span class="block w-6 h-[3px] bg-black mb-1"></span>
-        <span class="block w-6 h-[3px] bg-black mb-1"></span>
-        <span class="block w-6 h-[3px] bg-black mb-1"></span>
+        <span class="mb-1 block h-[3px] w-6 bg-black"></span>
+        <span class="mb-1 block h-[3px] w-6 bg-black"></span>
+        <span class="mb-1 block h-[3px] w-6 bg-black"></span>
       </button>
     </nav>
 
     <!-- Mobile menu - hidden by default -->
     <div
       id="mobile-menu"
-      class="fixed inset-0 bg-[#1c1c1c] text-white z-50 hidden pt-4 lg:hidden"
+      class="fixed inset-0 z-50 hidden bg-[#1c1c1c] pt-4 text-white lg:hidden"
     >
       <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center">
+        <div class="flex items-center justify-between">
           <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
           <button
             id="close-menu"
-            class="text-3xl bg-white text-black rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
+            class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-3xl text-black"
           >
             &times;
           </button>
         </div>
-        <div class="flex flex-col gap-4 mt-8">
+        <div class="mt-8 flex flex-col gap-4">
           <button
-            class="cursor-pointer hover:bg-blue-500 rounded-lg bg-white text-black border p-2 w-full text-left"
+            class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-blue-500"
           >
             Matei Ovidiu Serban
           </button>
           <button
-            class="cursor-pointer hover:bg-red-500 rounded-lg bg-white text-black border p-2 w-full text-left"
+            class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-red-500"
           >
             Lorenzo Faccio
           </button>
           <button
-            class="cursor-pointer hover:bg-green-500 rounded-lg bg-white text-black border p-2 w-full text-left"
+            class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-green-500"
           >
             Marco Fediuc
           </button>
           <button
-            class="cursor-pointer hover:bg-yellow-400 rounded-lg bg-white text-black border p-2 w-full text-left"
+            class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-yellow-400"
           >
             Jun Bao Matteo Qiu
           </button>
           <button
-            class="cursor-pointer rounded-lg bg-[#2c2c2c] text-green-700 border-black p-2 w-full text-left"
+            class="w-full cursor-pointer rounded-lg border-black bg-[#2c2c2c] p-2 text-left text-green-700"
           >
             Change it up
           </button>
@@ -102,53 +101,60 @@
       </div>
     </div>
 
-    <section class="flex flex-col justify-center items-center p-16 gap-32 w-300 mx-auto">
+    <section
+      class="mx-auto flex w-full flex-col items-center justify-center gap-32 p-16"
+    >
       <div class="">
-        <h1 class="text-6xl font-medium tracking-tight text-center mb-4">
+        <h1 class="mb-4 text-center text-6xl font-medium tracking-tight">
           Any doubts? Any questions?
         </h1>
-        <h1 class="text-6xl font-medium tracking-tight mb-2">
+        <h1 class="mb-2 text-6xl font-medium tracking-tight">
           Don't hesitate, reach out to me!
         </h1>
         <hr />
       </div>
-      <form action="" method="post" class="self-start max-2-lg p-6">
+      <form
+        action=""
+        method="post"
+        class="max-2-lg mx-auto w-[75%] self-start p-6 xl:w-[50%]"
+      >
         <div>
-          <div class="flex flex-col mt-4 w-[300%]">
+          <div class="mt-4 flex flex-col">
             <label for="basic-url" class="text-4xl">Full name</label>
             <input
               type="text"
-              class="form-control focus:outline-none mt-4 pl-1 py-2"
+              class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="John Doe"
               name="name"
             />
-          <hr />
+            <hr />
           </div>
-          <div class="flex flex-col mt-4 w-[300%]">
+          <div class="mt-4 flex flex-col">
             <label for="basic-url" class="text-4xl">E-mail</label>
             <input
               type="text"
-              class="form-control focus:outline-none mt-4 pl-1 py-2"
+              class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="johndoe@gmail.com"
               name="email"
             />
-          <hr />
+            <hr />
           </div>
-          <div class="flex flex-col mt-4 w-[300%]">
-          <label for="basic-url" class="text-4xl">Message</label>
-          <input
-            type="text"
-            class="form-control focus:outline-none mt-4 pl-1 py-2"
-            placeholder="Write here your message"
-            name="userMessage"
-          />
-          <hr />
+          <div class="mt-4 flex flex-col">
+            <label for="basic-url" class="text-4xl">Message</label>
+            <input
+              type="text"
+              class="form-control mt-4 py-2 pl-1 focus:outline-none"
+              placeholder="Write here your message"
+              name="userMessage"
+            />
+            <hr />
+          </div>
         </div>
       </form>
     </section>
     <script>
-        // script.js
-    document.addEventListener("DOMContentLoaded", function () {
+      // script.js
+      document.addEventListener("DOMContentLoaded", function () {
         const hamburgerButton = document.getElementById("hamburger-button");
         const closeMenuButton = document.getElementById("close-menu");
         const mobileMenu = document.getElementById("mobile-menu");
@@ -173,11 +179,14 @@
         // Handle resize events
         window.addEventListener("resize", function () {
           // If window width is lg breakpoint (1024px) or larger and menu is open, close it
-          if (window.innerWidth >= 1024 && mobileMenu.classList.contains("block")) {
+          if (
+            window.innerWidth >= 1024 &&
+            mobileMenu.classList.contains("block")
+          ) {
             closeMenu();
           }
         });
-    });
+      });
     </script>
   </body>
 </html>
