@@ -53,13 +53,13 @@ def contact_me():
         email = request.form["email"]
         message = request.form["userMessage"]
 
-        my_email = "mannaggiaalcervello@gmail.com"
-        password = "uovi bmer ezsh ilre"
+        my_email = email
+        password = password
 
         with smtplib.SMTP("smtp.gmail.com") as mail:
             mail.starttls()
             mail.login(user=my_email, password=password)
-            mail.sendmail(from_addr=my_email, to_addrs="mannaggiaalcervello@gmail.com", msg=
+            mail.sendmail(from_addr=my_email, to_addrs=my_email, msg=
                         f"Subject:Contact me form blog\n\nname: {name}\nemail: {email}\nmessage: {message}")
 
         return render_template('contact.html', msg_sent = True)
