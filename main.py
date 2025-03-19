@@ -18,7 +18,7 @@ def home():
     dictionar = {1 : "lorenzo.html", 2 : "matei.html" , 3 : "matteo.html", 4 : "marco.html"}
     last_num = session.get("last_num")
     num = random.randint(1,4)
-    
+
     while (num == last_num):
         num = random.randint(1,4)
 
@@ -32,7 +32,7 @@ def matei():
 
 @app.route("/lorenzo", methods=['POST', 'GET'])
 def lorenzo():
-    
+
     return render_template("lorenzo.html")
 
 
@@ -54,11 +54,11 @@ def contact_me():
         message = request.form["userMessage"]
 
         my_email = email
-        password = password
+        my_password = password
 
         with smtplib.SMTP("smtp.gmail.com") as mail:
             mail.starttls()
-            mail.login(user=my_email, password=password)
+            mail.login(user=my_email, password=my_password)
             mail.sendmail(from_addr=my_email, to_addrs=my_email, msg=
                         f"Subject:Contact me form blog\n\nname: {name}\nemail: {email}\nmessage: {message}")
 
