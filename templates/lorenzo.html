@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetrafolio: Lorenzo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/output.css" />
+  </head>
+  <body class="bg-black font-[Montserrat] text-white">
+    <nav class="flex items-center justify-between gap-4 border-b p-4">
+      <a href="{{url_for('home')}}">
+        <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+      </a>
+
+      <!-- Desktop menu - visible on lg screens and above -->
+      <div class="hidden gap-2 lg:flex">
+        <a href="{{url_for('matei')}}">
+        <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-blue-500">Matei Ovidiu Serban </button>
+        </a>
+
+        <a href="#">
+          <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-red-500">Lorenzo Faccio</button>
+        </a>
+
+        <a href="{{url_for('marco')}}">
+          <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-green-500">Marco Fediuc</button>
+        </a>
+
+        <a href="{{url_for('matteo')}}">
+          <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-yellow-400">Jun Bao Matteo Qiu</button>
+        </a>
+
+        <a href="#">
+          <button class="rounded-x1 ml-4 overflow-hidden rounded-lg border-2 border-white bg-[#258a1a] p-1.5 px-4 text-[15px] font-bold text-[#131313] duration-800 hover:bg-[#b51919] hover:text-white hover:shadow-[0_2px_0_2px_#781427]">Change it up</button>
+        </a>
+      </div>
+
+      <!-- Hamburger button - visible below lg screens -->
+      <button
+        id="hamburger-button"
+        class="flex cursor-pointer flex-col items-center justify-center rounded-md bg-white p-2 lg:hidden"
+      >
+        <span class="mb-1 block h-[3px] w-6 bg-black"></span>
+        <span class="mb-1 block h-[3px] w-6 bg-black"></span>
+        <span class="mb-1 block h-[3px] w-6 bg-black"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu - hidden by default -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 hidden bg-[#1c1c1c] pt-4 text-white lg:hidden"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between">
+          <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+          <button
+            id="close-menu"
+            class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-3xl text-black"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="mt-8 flex flex-col gap-4">
+          <a href="{{url_for('matei')}}">
+            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-blue-500">Matei Ovidiu Serban</button>
+          </a>
+          <a href="#">
+            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-red-500">Lorenzo Faccio</button>
+          </a>
+          <a href="{{url_for('marco')}}">
+            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-green-500">Marco Fediuc</button>
+          </a>
+          <a href="{{url_for('matteo')}}">
+            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-yellow-400">Jun Bao Matteo Qiu</button>
+          </a>
+          <a href="#">
+            <button class="w-full cursor-pointer rounded-lg border-black bg-[#2c2c2c] p-2 text-left text-green-700">Change it up</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <section
+      class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 p-4 sm:flex-row sm:p-16"
+    >
+      <img
+        src="../assets/lorenzo.jpeg"
+        class="w-[200px] rounded-[25%] border-blue-300 lg:w-[250px]"
+        alt="avatar"
+      />
+      <div class="w-[70%]">
+        <div
+          class="flex w-[80%] flex-col flex-col-reverse justify-between gap-[25%] md:flex-col-reverse md:flex-row md:items-center"
+        >
+          <div class="flex items-center">
+            <img
+              class="h-6 w-6 invert filter"
+              src="../assets/location.png"
+              alt=""
+            />
+            <h2 class="text-xl font-bold whitespace-nowrap">Verona, Italy</h2>
+          </div>
+        </div>
+        <h1
+          class="mt-4 inline-block bg-gradient-to-r from-red-400 to-white bg-clip-text text-3xl font-semibold tracking-tighter whitespace-nowrap text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+        >
+          Lorenzo Faccio
+        </h1>
+        <p class="text-lg font-medium sm:w-[80%]">
+          Computer Science student, technology enthusiast who enjoys both
+          hardware and software product. Right now looking for developing skills
+          in both Front-end and Back-end.
+        </p>
+        <div
+          class="mt-8 flex w-full items-center justify-center gap-12 sm:justify-start"
+        >
+          <a class="w-12" href="https://github.com/skyjager51" target="_blank">
+            <img src="../assets/github.png" alt="github" />
+          </a>
+          <a
+            class="w-12"
+            href="mailto:mateiovidiuserban@gmail.com"
+            taget="_blank"
+          >
+            <img src="../assets/mail.png" alt="mail" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="mt-4 h-1 w-full bg-linear-to-r from-red-300 to-red-600"></div>
+
+    <section
+      class="Figmagradient w-screen min-w-full overflow-hidden p-12 lg:relative lg:h-224"
+    >
+      <h1 class="-mt-4 mb-8 text-center text-4xl font-bold lg:mb-0">Skills</h1>
+
+      <aside
+        class="mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:top-25 lg:left-[23%] lg:mb-0 lg:w-[25%] xl:top-32 xl:left-[23%] 2xl:left-[23%]"
+      >
+        <h2 class="mb-2 text-xl font-bold">Front-End</h2>
+        <p class="mb-2">
+          With basis in Html, CSS and Tailwind i’m looking forward to improve my
+          skills due my passion for the user experience. <br />
+        </p>
+        <p class="mb-4">
+          Planning to learn JavaScript and React to enhance my skill and
+          participate even more heavily in every aspect of the development.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-6">
+          <img class="w-8" src="../assets/html.png" alt="HTML Icon" />
+          <img class="w-8" src="../assets/css.png" alt="CSS Icon" />
+          <img class="w-8" src="../assets/js.png" alt="Javascript Icon" />
+          <img class="w-8" src="../assets/tailwind.png" alt="Tailwind Icon" />
+        </div>
+      </aside>
+      <aside
+        class="top-64 mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:right-[24%] md:mx-auto md:w-[75%] lg:absolute lg:right-[24%] lg:mb-0 lg:w-[25%] xl:right-[24%] 2xl:right-[24%]"
+      >
+        <h2 class="mb-2 text-xl font-bold">Back-End</h2>
+        <p class="mb-2">
+          Right now my go to choice. The need of problem solving and
+          adaptability needed inspire and intrigue me. I’ve studied in all it’s
+          details Python and rignt now i’m studyng Java and C language.
+          <br />
+        </p>
+        <p class="mb-4">
+          Python knowledge: Pandas, Selenioum, Flask, Jinja, Turtle, Numpy.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-6">
+          <img class="w-10" src="../assets/c.png" alt="C Icon" />
+          <img class="w-10" src="../assets/python.png" alt="Python Icon" />
+          <img class="w-8" src="../assets/java.png" alt="Java Icon" />
+        </div>
+      </aside>
+      <aside
+        class="md: top-128 bottom-8 mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:h-[41%] md:w-[75%] lg:absolute lg:left-[23%] lg:mb-0 lg:h-[40%] lg:w-[25%] xl:left-[23%] xl:h-[35%] 2xl:left-[25%] 2xl:h-[29%]"
+      >
+        <h2 class="mb-2 text-xl font-bold">Version-control</h2>
+        <p class="mb-2">
+          As a must for every developer is the VCS, a tool to always keep under
+          the belt to save snapshot of the files. By using Git alongside GitHub
+          the possibility to work with other developer by saving and retrieving
+          file online can enhance productivity.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-4">
+          <img class="w-8" src="../assets/github.png" alt="GitHub Icon" />
+          <img class="w-10" src="../assets/git2.png" alt="Git Icon" />
+        </div>
+      </aside>
+    </section>
+    <div class="h-1 w-full bg-linear-to-r from-red-300 to-red-600"></div>
+    <section class="h-[80%] bg-[#09090b]">
+      <h1 class="mb-8 p-8 text-center text-4xl font-bold">Projects</h1>
+      <div
+        class="flex flex-col flex-col-reverse items-center justify-center gap-16 p-4 lg:flex-row"
+      >
+        <img
+          class="w-[75%] object-contain md:w-[80%] lg:w-[60%] 2xl:w-[50%]"
+          src="../assets/blog.png"
+          alt="Image of a Blog"
+        />
+        <div class="w-[80%] rounded-xl border-4 p-6 lg:h-[10%] lg:w-[25%]">
+          <h2 class="mb-2 text-2xl font-bold">Blog</h2>
+          <p>
+            A web-page blog who can handle login, register and logout with an
+            Sqlite database. In this blog admin users can create, delete and
+            modify blogs while normal user can only read the blogs. The
+            front-end is realized with Html and Bootstrap while the back-end is
+            completely realized with Python Flask and Jinja.
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center gap-16 p-4 md:mt-12 lg:flex-row"
+      >
+        <div class="w-[80%] rounded-xl border-4 p-6 lg:h-[10%] lg:w-[25%]">
+          <h2 class="mb-2 text-2xl font-bold">Snake</h2>
+          <p>
+            Designed and developed interactive mini-games like Snake, Pong, and
+            Crossy Road using Python’s Turtle module. Focused on game mechanics,
+            animations, and user interaction to create engaging and fun
+            experiences for players
+          </p>
+        </div>
+        <img
+          class="w-[75%] object-contain md:w-[70%] lg:w-[40%] xl:w-[35%] 2xl:w-[30%]"
+          src="../assets/snake.png"
+          alt="Image of a Maze Game"
+        />
+      </div>
+    </section>
+    <footer class="p-8">
+      <div class="mt-8 mb-6 flex items-center justify-center gap-16">
+        <a class="w-12" href="https://github.com/skyjager51" target="_blank">
+          <img src="../assets/github.png" alt="github" />
+        </a>
+        <a
+          class="w-12"
+          href="mailto:mateiovidiuserban@gmail.com"
+          taget="_blank"
+        >
+          <img src="../assets/mail.png" alt="mail" />
+        </a>
+        <a class="w-12" href="" target="_blank">
+          <img src="../assets/document.png" alt="curiculum" />
+        </a>
+      </div>
+      <div class="flex flex-col justify-center">
+        <h3 class="mb-2 text-center font-medium">Reach out to me at:</h3>
+
+        <a href="{{url_for('contact_me')}}" class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black">
+          <button class="cursor-pointer">Link to the form</button>
+        </a>
+      </div>
+    </footer>
+    <script>
+      // script.js
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerButton = document.getElementById("hamburger-button");
+        const closeMenuButton = document.getElementById("close-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        // Function to open menu
+        function openMenu() {
+          mobileMenu.classList.remove("hidden");
+          mobileMenu.classList.add("block");
+          document.body.classList.add("overflow-hidden");
+        }
+
+        // Function to close menu
+        function closeMenu() {
+          mobileMenu.classList.remove("block");
+          mobileMenu.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        hamburgerButton.addEventListener("click", openMenu);
+        closeMenuButton.addEventListener("click", closeMenu);
+
+        // Handle resize events
+        window.addEventListener("resize", function () {
+          // If window width is lg breakpoint (1024px) or larger and menu is open, close it
+          if (
+            window.innerWidth >= 1024 &&
+            mobileMenu.classList.contains("block")
+          ) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
