@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="../assets/output.css" />
   </head>
-  <body class="bg-black font-[Montserrat] text-white">
+  <body class="overflow-x-hidden bg-black font-[Montserrat] text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
       <a href="{{url_for('home')}}">
         <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
@@ -21,19 +21,39 @@
       <!-- Desktop menu - visible on lg screens and above -->
       <div class="hidden gap-2 lg:flex">
         <a href="{{url_for('matei')}}">
-          <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-blue-500">Matei Ovidiu Serban</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-blue-500"
+          >
+            Matei Ovidiu Serban
+          </button>
         </a>
         <a href="{{url_for('lorenzo')}}">
-          <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-red-500">Lorenzo Faccio</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-red-500"
+          >
+            Lorenzo Faccio
+          </button>
         </a>
         <a href="{{url_for('marco')}}">
-          <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-green-500">Marco Fediuc</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-green-500"
+          >
+            Marco Fediuc
+          </button>
         </a>
         <a href="#">
-          <button class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-yellow-400">Jun Bao Matteo Qiu</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-yellow-400"
+          >
+            Jun Bao Matteo Qiu
+          </button>
         </a>
         <a href="#">
-          <button class="rounded-x1 ml-4 overflow-hidden rounded-lg border-2 border-white bg-[#258a1a] p-1.5 px-4 text-[15px] font-bold text-[#131313] duration-800 hover:bg-[#c9a814] hover:text-white hover:shadow-[0_2px_0_2px_#a68d1e]">Change it up</button>
+          <button
+            class="rounded-x1 duration-800 ml-4 overflow-hidden rounded-lg border-2 border-white bg-[#258a1a] p-1.5 px-4 text-[15px] font-bold text-[#131313] hover:bg-[#c9a814] hover:text-white hover:shadow-[0_2px_0_2px_#a68d1e]"
+          >
+            Change it up
+          </button>
         </a>
       </div>
 
@@ -65,19 +85,39 @@
         </div>
         <div class="mt-8 flex flex-col gap-4">
           <a href="{{url_for('matei')}}">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-blue-500">Matei Ovidiu Serban</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-blue-500"
+            >
+              Matei Ovidiu Serban
+            </button>
           </a>
           <a href="{{url_for('lorenzo')}}">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-red-500">Lorenzo Faccio</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-red-500"
+            >
+              Lorenzo Faccio
+            </button>
           </a>
           <a href="{{url_for('marco')}}">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-green-500">Marco Fediuc</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-green-500"
+            >
+              Marco Fediuc
+            </button>
           </a>
           <a href="#">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-yellow-400">Jun Bao Matteo Qiu</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-yellow-400"
+            >
+              Jun Bao Matteo Qiu
+            </button>
           </a>
           <a href="#">
-            <button class="w-full cursor-pointer rounded-lg border-black bg-[#2c2c2c] p-2 text-left text-green-700">Change it up</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border-black bg-[#2c2c2c] p-2 text-left text-green-700"
+            >
+              Change it up
+            </button>
           </a>
         </div>
       </div>
@@ -87,15 +127,15 @@
     >
       <img
         src="../assets/matteo.png"
-        class="w-[200px] rounded-[50%] border-5 border-yellow-500 lg:w-[250px]"
+        class="border-5 w-[200px] rounded-[50%] border-yellow-500 lg:w-[250px]"
         alt="avatar"
       />
       <div class="w-[70%]">
         <div
-          class="flex w-[80%] flex-col flex-col-reverse justify-between gap-[25%] md:flex-col-reverse md:flex-row md:items-center"
+          class="flex w-[80%] flex-col flex-col-reverse justify-between gap-[25%] md:flex-row md:flex-col-reverse md:items-center"
         >
           <h2
-            class="mt-4 text-lg font-bold whitespace-nowrap md:m-0 lg:text-xl"
+            class="mt-4 whitespace-nowrap text-lg font-bold md:m-0 lg:text-xl"
           >
             Hi there! I'm
           </h2>
@@ -105,11 +145,11 @@
               src="../assets/location.png"
               alt=""
             />
-            <h2 class="text-xl font-bold whitespace-nowrap">Verona, Italy</h2>
+            <h2 class="whitespace-nowrap text-xl font-bold">Verona, Italy</h2>
           </div>
         </div>
         <h1
-          class="mt-4 inline-block bg-gradient-to-r from-white to-yellow-500 bg-clip-text text-3xl font-semibold tracking-tighter whitespace-nowrap text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+          class="mt-4 inline-block whitespace-nowrap bg-gradient-to-r from-white to-yellow-500 bg-clip-text text-3xl font-semibold tracking-tighter text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
         >
           Jun Bao Matteo Qiu
         </h1>
@@ -128,15 +168,17 @@
         </div>
       </div>
     </section>
-    <div class="mt-4 h-1 w-full bg-linear-to-r from-yellow-500 to-yellow-400"></div>
+    <div
+      class="bg-linear-to-r mt-4 h-1 w-full from-yellow-500 to-yellow-400"
+    ></div>
 
     <section
-      class="Figmagradient w-screen min-w-full overflow-hidden p-12 lg:relative lg:h-200"
+      class="Figmagradient lg:h-200 w-screen min-w-full overflow-hidden p-12 lg:relative"
     >
       <h1 class="-mt-4 mb-8 text-center text-4xl font-bold lg:mb-0">Skills</h1>
 
       <aside
-        class="mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:top-25 lg:left-[23%] lg:mb-0 lg:w-[25%] xl:top-32 xl:left-[23%] 2xl:left-[23%]"
+        class="border-5 lg:top-25 mb-8 rounded-xl bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:left-[23%] lg:mb-0 lg:w-[25%] xl:left-[23%] xl:top-32 2xl:left-[23%]"
       >
         <h2 class="mb-2 text-xl font-bold">Front-End</h2>
         <p class="mb-4">
@@ -152,7 +194,7 @@
         </div>
       </aside>
       <aside
-        class="top-64 mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:right-[24%] md:mx-auto md:w-[75%] lg:absolute lg:right-[24%] lg:mb-0 lg:w-[25%] xl:right-[23%] 2xl:right-[23%]"
+        class="border-5 top-64 mb-8 rounded-xl bg-black/70 p-4 shadow-2xl md:right-[24%] md:mx-auto md:w-[75%] lg:absolute lg:right-[24%] lg:mb-0 lg:w-[25%] xl:right-[23%] 2xl:right-[23%]"
       >
         <h2 class="mb-2 text-xl font-bold">Back-End</h2>
         <p class="mb-6">
@@ -168,7 +210,7 @@
         </div>
       </aside>
       <aside
-        class="bottom-30 mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:left-[23%] lg:mb-0 lg:w-[26%] xl:left-[23%] 2xl:left-[27%]"
+        class="bottom-30 border-5 mb-8 rounded-xl bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:left-[23%] lg:mb-0 lg:w-[26%] xl:left-[23%] 2xl:left-[27%]"
       >
         <h2 class="mb-2 text-xl font-bold">Version-control</h2>
         <p class="mb-2">
@@ -181,7 +223,7 @@
         </div>
       </aside>
     </section>
-    <div class="h-1 w-full bg-linear-to-r from-yellow_400 to-yellow-300"></div>
+    <div class="bg-linear-to-r from-yellow_400 h-1 w-full to-yellow-300"></div>
     <section class="h-[80%] bg-[#09090b]">
       <h1 class="mb-8 p-8 text-center text-4xl font-bold">Projects</h1>
       <div
@@ -203,7 +245,7 @@
       </div>
     </section>
     <footer class="p-8">
-      <div class="mt-8 mb-6 flex items-center justify-center gap-16">
+      <div class="mb-6 mt-8 flex items-center justify-center gap-16">
         <a class="w-12" href="https://github.com/M1T730" target="_blank">
           <img src="../assets/github.png" alt="github" />
         </a>
@@ -216,7 +258,10 @@
       </div>
       <div class="flex flex-col justify-center">
         <h3 class="mb-2 text-center font-medium">Reach out to me at:</h3>
-        <a href="{{url_for('contact_me')}}" class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black">
+        <a
+          href="{{url_for('contact_me')}}"
+          class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black"
+        >
           <button class="cursor-pointer">Link to the form</button>
         </a>
       </div>
