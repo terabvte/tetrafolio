@@ -10,54 +10,69 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
     <link rel="stylesheet" href="../assets/output.css" />
   </head>
   <body class="overflow-x-hidden bg-black font-[Montserrat] text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
       <a href="{{url_for('home')}}">
-        <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+        <img
+          class="w-12 hover:motion-safe:animate-spin"
+          src="../assets/logo.webp"
+          alt="Logo"
+        />
       </a>
 
       <!-- Desktop menu - visible on lg screens and above -->
-      <div class="hidden gap-2 lg:flex">
+      <div class="hidden items-center gap-2 lg:flex">
         <a href="{{url_for('matei')}}">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-blue-500"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-blue-500"
           >
             Matei Ovidiu Serban
           </button>
         </a>
-
-        <a href="#">
+        <a href="{{url_for('lorenzo')}}">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-red-500"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-red-500"
           >
             Lorenzo Faccio
           </button>
         </a>
-
         <a href="{{url_for('marco')}}">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-green-500"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-green-500"
           >
             Marco Fediuc
           </button>
         </a>
-
         <a href="{{url_for('matteo')}}">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-yellow-400"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-yellow-400"
           >
             Jun Bao Matteo Qiu
           </button>
         </a>
-
-        <a href="#">
-          <button
-            class="rounded-x1 duration-800 ml-4 overflow-hidden rounded-lg border-2 border-white bg-[#258a1a] p-1.5 px-4 text-[15px] font-bold text-[#131313] hover:bg-[#b51919] hover:text-white hover:shadow-[0_2px_0_2px_#781427]"
-          >
-            Change it up
-          </button>
+        <a
+          href="#"
+          class="group relative ml-4 inline-flex items-center justify-center overflow-hidden text-nowrap rounded-lg bg-red-700 px-4 py-1.5 font-medium tracking-tighter text-white"
+        >
+          <span
+            class="absolute h-0 w-0 rounded-full bg-yellow-600 transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56"
+          ></span>
+          <span
+            class="absolute inset-0 -mt-1 h-full w-full rounded-lg bg-gradient-to-b from-transparent via-transparent to-gray-700 opacity-30"
+          ></span>
+          <span class="relative">
+            <span
+              class="block opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+              >Change it up!</span
+            >
+            <span
+              class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >Coming soon!</span
+            >
+          </span>
         </a>
       </div>
 
@@ -79,7 +94,7 @@
     >
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between">
-          <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+          <img class="w-16" src="../assets/logo.webp" />
           <button
             id="close-menu"
             class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-3xl text-black"
@@ -95,7 +110,7 @@
               Matei Ovidiu Serban
             </button>
           </a>
-          <a href="#">
+          <a href="{{url_for('lorenzo')}}">
             <button
               class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-red-500"
             >
@@ -116,21 +131,44 @@
               Jun Bao Matteo Qiu
             </button>
           </a>
-          <a href="#">
-            <button
-              class="w-full cursor-pointer rounded-lg border-black bg-[#2c2c2c] p-2 text-left text-green-700"
+          <div class="w-full">
+            <input
+              type="radio"
+              id="state1"
+              name="mobile-state"
+              class="peer/default hidden"
+              checked
+            />
+            <input
+              type="radio"
+              id="state2"
+              name="mobile-state"
+              class="peer/active hidden"
+            />
+
+            <label
+              for="state2"
+              class="block w-full cursor-pointer rounded-lg bg-green-800 p-2 text-left text-white peer-checked/default:block peer-checked/active:hidden"
             >
-              Change it up
-            </button>
-          </a>
+              Change it up!
+            </label>
+
+            <label
+              for="state1"
+              class="hidden w-full cursor-pointer rounded-lg bg-yellow-600 p-2 text-left text-white peer-checked/active:block peer-checked/default:hidden"
+            >
+              Coming soon!
+            </label>
+          </div>
         </div>
       </div>
     </div>
+
     <section
       class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 p-4 sm:flex-row sm:p-16"
     >
       <img
-        src="../assets/lorenzo.jpeg"
+        src="../assets/lorenzo.webp"
         class="w-[200px] rounded-[25%] border-blue-300 lg:w-[250px]"
         alt="avatar"
       />
@@ -242,7 +280,7 @@
       >
         <img
           class="w-[75%] object-contain md:w-[80%] lg:w-[60%] 2xl:w-[50%]"
-          src="../assets/blog.png"
+          src="../assets/blog.webp"
           alt="Image of a Blog"
         />
         <div class="w-[80%] rounded-xl border-4 p-6 lg:h-[10%] lg:w-[25%]">
