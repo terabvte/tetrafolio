@@ -14,7 +14,7 @@ app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 load_dotenv()
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
-captchApass = os.getenv("TOKEN")
+
 
 @app.route("/")
 def home():
@@ -85,7 +85,7 @@ def contact_me():
             print(f"Error sending email: {e}")
             return render_template('contact.html', msg_sent=False, error=str(e))
 
-    return render_template('contact.html', msg_sent=False, token=captchApass)
+    return render_template('contact.html', msg_sent=False)
 
 
 if __name__ == "__main__":

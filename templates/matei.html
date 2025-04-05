@@ -240,6 +240,7 @@
       class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 p-4 sm:flex-row sm:p-16"
     >
       <img
+        id="pfp-change"
         src="../assets/matei.webp"
         class="border-5 w-[200px] rounded-[47%] border-blue-300 lg:w-[250px]"
         alt="avatar"
@@ -263,6 +264,7 @@
           </div>
         </div>
         <h1
+          id="name-change"
           class="mt-4 inline-block whitespace-nowrap bg-gradient-to-r from-white to-blue-300 bg-clip-text text-3xl font-semibold tracking-tighter text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
         >
           Matei Ovidiu Serban
@@ -522,6 +524,15 @@
         const result = getWpm();
         if (infoDiv) infoDiv.innerHTML = `WPM: ${result}`;
         if (cursorEl) cursorEl.style.visibility = "hidden";
+        if (result > 60) {
+          document.getElementById("name-change").textContent = "Ginger";
+          document.getElementById("name-change").style.paddingBottom = "5px";
+          document.getElementById("pfp-change").src = "../assets/ginger2.jpg";
+          document.getElementById("pfp-change").style.objectFit = "cover"
+          document.getElementById("pfp-change").style.height = "250px"
+
+
+        }
       }
       function newGame() {
         if (window.timer) {

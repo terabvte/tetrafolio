@@ -241,6 +241,7 @@
       class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 p-4 sm:flex-row sm:p-16"
     >
       <img
+        id="pfp-change"
         src="../assets/matteo.webp"
         class="border-5 h-[250px] w-[250px] rounded-[50%] border-yellow-500 object-cover"
         alt="avatar"
@@ -264,6 +265,7 @@
           </div>
         </div>
         <h1
+          id="name-change"
           class="mt-4 inline-block whitespace-nowrap bg-gradient-to-r from-white to-yellow-500 bg-clip-text text-3xl font-semibold tracking-tighter text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
         >
           Jun Bao Matteo Qiu
@@ -513,6 +515,12 @@
         const result = getWpm();
         if (infoDiv) infoDiv.innerHTML = `WPM: ${result}`;
         if (cursorEl) cursorEl.style.visibility = "hidden";
+
+        if (result > 50) {
+          document.getElementById("name-change").textContent = "Pspspsps";
+          document.getElementById("pfp-change").src =
+            "../assets/matteo-cat.png";
+        }
       }
       function newGame() {
         if (window.timer) {

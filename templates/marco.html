@@ -12,7 +12,6 @@
     />
     <link rel="stylesheet" href="../assets/output.css" />
     <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
-    <link rel="preload" href="../assets/marco-cropped.webp" as="image" />
   </head>
   <body class="overflow-x-hidden bg-black text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
@@ -258,6 +257,7 @@
       class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 p-4 sm:flex-row sm:p-16"
     >
       <img
+        id="pfp-change"
         src="../assets/marco-cropped.webp"
         class="min-h-[360px] w-[200px] rounded-[47%] border-4 border-green-600 lg:w-[250px]"
         alt="avatar"
@@ -281,6 +281,7 @@
           </div>
         </div>
         <h1
+          id="name-change"
           class="mt-4 inline-block whitespace-nowrap bg-gradient-to-r from-white to-green-600 bg-clip-text text-3xl font-semibold tracking-tighter text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
         >
           Marco Fediuc
@@ -620,6 +621,12 @@
         const result = getWpm();
         if (infoDiv) infoDiv.innerHTML = `WPM: ${result}`;
         if (cursorEl) cursorEl.style.visibility = "hidden"; // Hide cursor
+
+        if (result > 70) {
+          document.getElementById("name-change").textContent = "Simba";
+          document.getElementById("pfp-change").src = "../assets/simba.jpeg";
+          document.getElementById("pfp-change").style.objectFit = "cover";
+        }
       }
 
       function newGame() {
@@ -1012,10 +1019,6 @@
 
       // --- Initial Game Setup On Load ---
       newGame(); // Set up the first game when the page loads
-
-      // ======================================================
-      // === Typing Game & Modal Logic END ==================
-      // ======================================================
     </script>
   </body>
 </html>
