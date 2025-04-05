@@ -130,35 +130,6 @@
               Jun Bao Matteo Qiu
             </button>
           </a>
-          <div class="w-full">
-            <input
-              type="radio"
-              id="state1"
-              name="mobile-state"
-              class="peer/default hidden"
-              checked
-            />
-            <input
-              type="radio"
-              id="state2"
-              name="mobile-state"
-              class="peer/active hidden"
-            />
-            <label
-              id="open-game-modal-mobile"
-              for="state2"
-              class="block w-full cursor-pointer rounded-lg bg-green-800 p-2 text-left text-white peer-checked/default:block peer-checked/active:hidden"
-            >
-              Change it up!
-            </label>
-
-            <label
-              for="state1"
-              class="hidden w-full cursor-pointer rounded-lg bg-yellow-600 p-2 text-left text-white peer-checked/active:block peer-checked/default:hidden"
-            >
-              Type away!
-            </label>
-          </div>
         </div>
       </div>
     </div>
@@ -215,6 +186,7 @@
                 </g>
               </svg>
               <h1 class="text-primaryColor text-3xl font-bold">TetraType</h1>
+              <h2 class="text-primaryColor ml-auto font-medium">🐱 = 100 WPM</h2>
             </div>
 
             <div id="header" class="mb-8 mt-5 grid grid-cols-2 px-1.5">
@@ -622,7 +594,7 @@
         if (infoDiv) infoDiv.innerHTML = `WPM: ${result}`;
         if (cursorEl) cursorEl.style.visibility = "hidden"; // Hide cursor
 
-        if (result > 70) {
+        if (result > 100) {
           document.getElementById("name-change").textContent = "Simba";
           document.getElementById("pfp-change").src = "../assets/simba.jpeg";
           document.getElementById("pfp-change").style.objectFit = "cover";
