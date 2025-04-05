@@ -8,12 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="../assets/output.css" />
     <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-      function onSubmit(token) {
-        document.getElementById("demo-form").submit();
-      }
-    </script>
   </head>
   <body class="overflow-x-hidden bg-black text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
@@ -183,14 +177,11 @@
         </div>
         <div class="mt-8 flex flex-col text-center">
           <button
-            class="g-recaptcha mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black"
-            data-sitekey="6LcW9AorAAAAAFKfbKZbuLczw1fWXgcmbFpYMrqx"
-            data-callback="onSubmit"
-            data-action="submit"
-            type="submit"
+          class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black"
+          type="submit"
           >
-            Send
-          </button>
+          Send
+        </button>
         </div>
       </form>
     </section>
