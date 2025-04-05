@@ -6,34 +6,69 @@
     <title>Contact me</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="../assets/output.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
   </head>
-  <body class="bg-black font-[Montserrat] text-white">
+  <body class="overflow-x-hidden bg-black text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
       <a href="{{url_for('home')}}">
-        <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+        <img
+          class="w-12 hover:motion-safe:animate-spin"
+          src="../assets/logo.webp"
+          alt="Logo"
+        />
       </a>
 
       <!-- Desktop menu - visible on lg screens and above -->
-      <div class="hidden gap-2 lg:flex">
+      <div class="hidden items-center gap-2 lg:flex">
         <a href="{{url_for('matei')}}">
-          <button class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-blue-500">Matei Ovidiu Serban</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-blue-500"
+          >
+            Matei Ovidiu Serban
+          </button>
         </a>
         <a href="{{url_for('lorenzo')}}">
-          <button class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-red-500">Lorenzo Faccio</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-red-500"
+          >
+            Lorenzo Faccio
+          </button>
         </a>
         <a href="{{url_for('marco')}}">
-          <button class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-green-500">Marco Fediuc</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-green-500"
+          >
+            Marco Fediuc
+          </button>
         </a>
         <a href="{{url_for('matteo')}}">
-          <button class="cursor-pointer rounded-lg border bg-white p-1 text-black hover:bg-yellow-400">Jun Bao Matteo Qiu</button>
+          <button
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-yellow-400"
+          >
+            Jun Bao Matteo Qiu
+          </button>
         </a>
-        <a href="#">
-          <button class="rounded-x1 ml-4 overflow-hidden rounded-lg border-2 border-white bg-[#258a1a] p-1.5 px-4 text-[15px] font-bold text-[#131313] duration-800 hover:bg-[#258a1a] hover:text-white hover:shadow-[0_2px_0_2px_#258a1a]">Change it up</button>
+        <a
+          href="#"
+          class="group relative ml-4 inline-flex items-center justify-center overflow-hidden text-nowrap rounded-lg bg-green-800 px-4 py-1.5 font-medium tracking-tighter text-white"
+        >
+          <span
+            class="absolute h-0 w-0 rounded-full bg-yellow-600 transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56"
+          ></span>
+          <span
+            class="absolute inset-0 -mt-1 h-full w-full rounded-lg bg-gradient-to-b from-transparent via-transparent to-gray-700 opacity-30"
+          ></span>
+          <span class="relative">
+            <span
+              class="block opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+              >Change it up!</span
+            >
+            <span
+              class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >Coming soon!</span
+            >
+          </span>
         </a>
       </div>
 
@@ -55,7 +90,7 @@
     >
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between">
-          <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+          <img class="w-16" src="../assets/logo.webp" />
           <button
             id="close-menu"
             class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-3xl text-black"
@@ -65,38 +100,86 @@
         </div>
         <div class="mt-8 flex flex-col gap-4">
           <a href="{{url_for('matei')}}">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-blue-500">Matei Ovidiu Serban</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-blue-500"
+            >
+              Matei Ovidiu Serban
+            </button>
           </a>
           <a href="{{url_for('lorenzo')}}">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-red-500">Lorenzo Faccio</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-red-500"
+            >
+              Lorenzo Faccio
+            </button>
           </a>
           <a href="{{url_for('marco')}}">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-green-500">Marco Fediuc</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-green-500"
+            >
+              Marco Fediuc
+            </button>
           </a>
           <a href="{{url_for('matteo')}}">
-            <button class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-yellow-400">Jun Bao Matteo Qiu</button>
+            <button
+              class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-yellow-400"
+            >
+              Jun Bao Matteo Qiu
+            </button>
           </a>
-          <a href="#">
-            <button class="w-full cursor-pointer rounded-lg border-black bg-[#2c2c2c] p-2 text-left text-green-700">Change it up</button>
-          </a>
+          <div class="w-full">
+            <input
+              type="radio"
+              id="state1"
+              name="mobile-state"
+              class="peer/default hidden"
+              checked
+            />
+            <input
+              type="radio"
+              id="state2"
+              name="mobile-state"
+              class="peer/active hidden"
+            />
+
+            <label
+              for="state2"
+              class="block w-full cursor-pointer rounded-lg bg-green-800 p-2 text-left text-white peer-checked/default:block peer-checked/active:hidden"
+            >
+              Change it up!
+            </label>
+
+            <label
+              for="state1"
+              class="hidden w-full cursor-pointer rounded-lg bg-yellow-600 p-2 text-left text-white peer-checked/active:block peer-checked/default:hidden"
+            >
+              Coming soon!
+            </label>
+          </div>
         </div>
       </div>
     </div>
 
     <section
-      class="mx-auto flex w-full flex-col items-center justify-center gap-32 p-16"
+      class="mx-auto flex w-full flex-col items-center justify-center gap-8 p-10 px-8 lg:gap-32 lg:p-16"
     >
       {% if msg_sent == False: %}
       <div class="">
-        <h1 class="mb-4 text-center text-6xl font-medium tracking-tight">
+        <h1
+          class="mb-4 text-center text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
+        >
           Any doubts? Any questions?
         </h1>
-        <h1 class="mb-2 text-6xl font-medium tracking-tight">
-          Don't hesitate, reach out to me!
+        <h1
+          class="mb-2 text-center text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
+        >
+          Don't hesitate, reach out to us!
         </h1>
 
         {% else %}
-        <h1 class="mb-2 text-6xl font-medium tracking-tight">
+        <h1
+          class="mb-2 text-center text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
+        >
           Message Sent!
         </h1>
         {% endif %}
@@ -105,7 +188,7 @@
       <form
         action="{{url_for('contact_me')}}"
         method="post"
-        class="max-2-lg mx-auto w-[75%] self-start p-6 xl:w-[50%]"
+        class="max-2-lg mx-auto w-[100%] self-start p-6 lg:w-[75%] xl:w-[50%]"
       >
         <div>
           <div class="mt-4 flex flex-col">
@@ -115,16 +198,18 @@
               class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="John Doe"
               name="name"
+              required
             />
             <hr />
           </div>
-          <div class="mt-4 flex flex-col">
+          <div class="mt-4 flex w-full flex-col px-0">
             <label for="basic-url" class="text-4xl">E-mail</label>
             <input
-              type="text"
+              type="email"
               class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="johndoe@gmail.com"
               name="email"
+              required
             />
             <hr />
           </div>
@@ -135,17 +220,22 @@
               class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="Write here your message"
               name="userMessage"
+              required
             />
             <hr />
           </div>
         </div>
-        <div class="text-center flex flex-col mt-8">
-          <button class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black" type="submit">Send</button>
+        <div class="mt-8 flex flex-col text-center">
+          <button
+            class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black"
+            type="submit"
+          >
+            Send
+          </button>
         </div>
       </form>
     </section>
     <script>
-      // script.js
       document.addEventListener("DOMContentLoaded", function () {
         const hamburgerButton = document.getElementById("hamburger-button");
         const closeMenuButton = document.getElementById("close-menu");

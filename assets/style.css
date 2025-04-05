@@ -18,31 +18,13 @@
   }
 }
 
-/*
-.form-control{
-  font-size: 0,9rem:
-  color: white;
-  background-color: transparent;
-  width: 100%;
-  box-sizing: border-box;
-  padding-inline: 5em;
-  padding-block: 1em;
-  margin: 1em 0;
-  border: none;
-  border-bottom: 1px solid rgb(221, 221, 221, 0.39);
+@font-face {
+  font-family: "Montserrat";
+  src: url("./montserrat.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
-.form-control-border {
-  position: absolute;
-  background: black;
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  transition: 0.3s;
+body {
+  font-family: "Montserrat";
 }
-
-.form-control:focus {
-  outline: none;
-}
-*/

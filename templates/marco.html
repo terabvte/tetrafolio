@@ -6,54 +6,72 @@
     <title>Tetrafolio: Marco</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="../assets/output.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
+    <link rel="preload" href="../assets/marco-cropped.webp" as="image" />
   </head>
-  <body class="bg-black font-[Montserrat] text-white">
+  <body class="overflow-x-hidden bg-black text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
       <a href="{{url_for('home')}}">
-        <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+        <img
+          loading="eager"
+          fetchpriority="high"
+          class="w-12 hover:motion-safe:animate-spin"
+          src="../assets/logo.webp"
+          alt="Logo"
+        />
       </a>
 
       <!-- Desktop menu - visible on lg screens and above -->
-      <div class="hidden gap-2 lg:flex">
+      <div class="hidden items-center gap-2 lg:flex">
         <a href="{{url_for('matei')}}">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-blue-500"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-blue-500"
           >
             Matei Ovidiu Serban
           </button>
         </a>
         <a href="{{url_for('lorenzo')}}">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-red-500"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-red-500"
           >
             Lorenzo Faccio
           </button>
         </a>
         <a href="#">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-green-500"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-green-500"
           >
             Marco Fediuc
           </button>
         </a>
         <a href="{{url_for('matteo')}}">
           <button
-            class="cursor-pointer rounded-lg border bg-white p-2 text-black hover:bg-yellow-400"
+            class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-yellow-400"
           >
             Jun Bao Matteo Qiu
           </button>
         </a>
-        <a href="#">
-          <button
-            class="rounded-x1 ml-4 overflow-hidden rounded-lg border-2 border-white bg-[#258a1a] p-1.5 px-4 text-[15px] font-bold text-[#131313] duration-800 hover:bg-[#1cba1c] hover:text-white hover:shadow-[0_2px_0_2px_#188718]"
-          >
-            Change it up
-          </button>
+        <a
+          href="#"
+          class="group relative ml-4 inline-flex items-center justify-center overflow-hidden text-nowrap rounded-lg bg-green-800 px-4 py-1.5 font-medium tracking-tighter text-white"
+        >
+          <span
+            class="absolute h-0 w-0 rounded-full bg-yellow-600 transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56"
+          ></span>
+          <span
+            class="absolute inset-0 -mt-1 h-full w-full rounded-lg bg-gradient-to-b from-transparent via-transparent to-gray-700 opacity-30"
+          ></span>
+          <span class="relative">
+            <span
+              class="block opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+              >Change it up!</span
+            >
+            <span
+              class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              >Coming soon!</span
+            >
+          </span>
         </a>
       </div>
 
@@ -75,7 +93,7 @@
     >
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between">
-          <img class="w-16" src="../assets/keyboard.png" alt="Logo" />
+          <img class="w-16" src="../assets/logo.webp" />
           <button
             id="close-menu"
             class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-3xl text-black"
@@ -112,13 +130,35 @@
               Jun Bao Matteo Qiu
             </button>
           </a>
-          <a href="#">
-            <button
-              class="w-full cursor-pointer rounded-lg border-black bg-[#2c2c2c] p-2 text-left text-green-700"
+          <div class="w-full">
+            <input
+              type="radio"
+              id="state1"
+              name="mobile-state"
+              class="peer/default hidden"
+              checked
+            />
+            <input
+              type="radio"
+              id="state2"
+              name="mobile-state"
+              class="peer/active hidden"
+            />
+
+            <label
+              for="state2"
+              class="block w-full cursor-pointer rounded-lg bg-green-800 p-2 text-left text-white peer-checked/default:block peer-checked/active:hidden"
             >
-              Change it up
-            </button>
-          </a>
+              Change it up!
+            </label>
+
+            <label
+              for="state1"
+              class="hidden w-full cursor-pointer rounded-lg bg-yellow-600 p-2 text-left text-white peer-checked/active:block peer-checked/default:hidden"
+            >
+              Coming soon!
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -127,16 +167,16 @@
       class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 p-4 sm:flex-row sm:p-16"
     >
       <img
-        src="../assets/marco-cropped.jpeg"
-        class="w-[200px] rounded-[47%] border-4 border-green-600 lg:w-[250px]"
+        src="../assets/marco-cropped.webp"
+        class="min-h-[360px] w-[200px] rounded-[47%] border-4 border-green-600 lg:w-[250px]"
         alt="avatar"
       />
       <div class="w-[55%]">
         <div
-          class="-gap-[10%] flex w-[70%] flex-col flex-col-reverse justify-between md:flex-col-reverse md:flex-row md:items-center"
+          class="-gap-[10%] flex w-[70%] flex-col flex-col-reverse justify-between md:flex-row md:flex-col-reverse md:items-center"
         >
           <h2
-            class="mt-4 text-lg font-bold whitespace-nowrap md:m-0 lg:text-xl"
+            class="mt-4 whitespace-nowrap text-lg font-bold md:m-0 lg:text-xl"
           >
             Hi there! I'm
           </h2>
@@ -146,11 +186,11 @@
               src="../assets/location.png"
               alt=""
             />
-            <h2 class="text-xl font-bold whitespace-nowrap">Pisa, Italy</h2>
+            <h2 class="whitespace-nowrap text-xl font-bold">Pisa, Italy</h2>
           </div>
         </div>
         <h1
-          class="mt-4 inline-block bg-gradient-to-r from-white to-green-600 bg-clip-text text-3xl font-semibold tracking-tighter whitespace-nowrap text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+          class="mt-4 inline-block whitespace-nowrap bg-gradient-to-r from-white to-green-600 bg-clip-text text-3xl font-semibold tracking-tighter text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
         >
           Marco Fediuc
         </h1>
@@ -169,7 +209,7 @@
           </a>
           <a
             class="w-12"
-            href="https://www.linkedin.com/in/marco-fediuc-9464b0238/"
+            href="https://www.linkedin.com/in/marco-fediuc/"
             taget="_blank"
           >
             <img src="../assets/linkedin.png" alt="linkedin" />
@@ -178,16 +218,16 @@
       </div>
     </section>
     <div
-      class="mt-4 h-1 w-full bg-linear-to-r from-green-300 to-green-500"
+      class="bg-linear-to-r mt-4 h-1 w-full from-green-300 to-green-500"
     ></div>
 
     <section
-      class="Figmagradient w-screen min-w-full overflow-hidden p-12 lg:relative lg:h-200"
+      class="Figmagradient lg:h-200 w-screen min-w-full overflow-hidden p-12 lg:relative"
     >
       <h1 class="-mt-4 mb-8 text-center text-4xl font-bold lg:mb-0">Skills</h1>
 
       <aside
-        class="mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:top-25 lg:left-[23%] lg:mb-0 lg:w-[25%] xl:top-32 xl:left-[23%] 2xl:left-[23%]"
+        class="border-5 lg:top-25 mb-8 rounded-xl bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:left-[23%] lg:mb-0 lg:w-[25%] xl:left-[23%] xl:top-32 2xl:left-[23%]"
       >
         <h2 class="mb-2 text-xl font-bold">Front-End</h2>
         <p class="mb-2 font-medium">
@@ -195,20 +235,24 @@
           moment. <br />
         </p>
         <p class="mb-4 font-medium">
-          Planning to learn the basics of React soon to upgrade my UIs through
-          the use of components.
+          Currently learning React and upgrading my web UIs through the use of
+          components.
         </p>
         <div class="mt-4 flex flex-wrap gap-6">
           <img class="w-8" src="../assets/html.png" alt="HTML Icon" />
           <img class="w-8" src="../assets/css.png" alt="CSS Icon" />
           <img class="w-8" src="../assets/js.png" alt="Javascript Icon" />
           <img class="w-8" src="../assets/ts.png" alt="Typescript Icon" />
-          <img class="w-8" src="../assets/tailwind.png" alt="Tailwind Icon" />
-          <img class="w-8" src="../assets/react.png" alt="React Icon" />
+          <img class="w-10" src="../assets/tailwind.png" alt="Tailwind Icon" />
+          <img
+            class="w-8 hover:motion-safe:animate-spin"
+            src="../assets/react.png"
+            alt="React Icon"
+          />
         </div>
       </aside>
       <aside
-        class="top-64 mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:right-[24%] md:mx-auto md:w-[75%] lg:absolute lg:right-[24%] lg:mb-0 lg:w-[25%] xl:right-[24%] 2xl:right-[24%]"
+        class="border-5 top-64 mb-8 rounded-xl bg-black/70 p-4 shadow-2xl md:right-[24%] md:mx-auto md:w-[75%] lg:absolute lg:right-[24%] lg:mb-0 lg:w-[25%] xl:right-[24%] 2xl:right-[24%]"
       >
         <h2 class="mb-2 text-xl font-bold">Back-End and General Programming</h2>
         <p class="mb-4 font-medium">
@@ -216,13 +260,15 @@
           my opinion are more intriguing and thought-provoking.
         </p>
         <div class="mt-4 flex flex-wrap gap-6">
+          <img class="w-10" src="../assets/c-sharp.png" alt="C# Icon" />
+          <img class="w-10" src="../assets/dotnets.png" alt=".NET Core Icon" />
           <img class="w-10" src="../assets/c.png" alt="C Icon" />
           <img class="w-10" src="../assets/python.png" alt="Python Icon" />
-          <img class="w-8" src="../assets/java.png" alt="Java Icon" />
+          <img class="w-10" src="../assets/java.png" alt="Java Icon" />
         </div>
       </aside>
       <aside
-        class="bottom-2 mb-8 rounded-xl border-5 bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:left-[23%] lg:mb-0 lg:w-[25%] xl:bottom-16 xl:left-[23%] 2xl:left-[27%]"
+        class="border-5 bottom-2 mb-8 rounded-xl bg-black/70 p-4 shadow-2xl md:left-[23%] md:mx-auto md:w-[75%] lg:absolute lg:left-[23%] lg:mb-0 lg:w-[25%] xl:bottom-16 xl:left-[23%] 2xl:left-[27%]"
       >
         <h2 class="mb-2 text-xl font-bold">Version-control</h2>
         <p class="mb-2 font-medium">
@@ -233,11 +279,11 @@
         </p>
         <div class="mt-4 flex flex-wrap gap-4">
           <img class="w-8" src="../assets/github.png" alt="GitHub Icon" />
-          <img class="w-10" src="../assets/git2.png" alt="Git Icon" />
+          <img class="w-8" src="../assets/git2.png" alt="Git Icon" />
         </div>
       </aside>
     </section>
-    <div class="h-1 w-full bg-linear-to-r from-green-300 to-green-500"></div>
+    <div class="bg-linear-to-r h-1 w-full from-green-300 to-green-500"></div>
     <section class="h-[80%] bg-[#09090b]">
       <h1 class="mb-2 p-8 text-center text-4xl font-bold">Projects</h1>
       <div
@@ -246,18 +292,20 @@
         <img
           id="food-img"
           class="w-[75%] cursor-pointer object-contain md:w-[70%] lg:w-[50%] xl:w-[50%]"
-          src="../assets/omnifood.png"
+          src="../assets/omnifood.webp"
           alt="Image of the food website: Omnifood"
         />
         <div class="w-[80%] rounded-xl border-4 p-6 lg:h-[10%] lg:w-[25%]">
           <h2 class="mb-2 text-2xl font-bold">Omnifood</h2>
           <p>A static website created with HTML and CSS <br /></p>
           <ul class="mt-2 list-inside list-disc space-y-2">
-            <li>Working with modern layouts using the following:</li>
-            <ul class="ml-6 list-inside list-disc space-y-2">
-              <li>CSS Grid, like reusable grids.</li>
-              <li>Flexbox, for navbar and centering.</li>
-            </ul>
+            <li>
+              Working with modern layouts using the following:
+              <ul class="ml-6 list-inside list-disc space-y-2">
+                <li>CSS Grid, like reusable grids.</li>
+                <li>Flexbox, for navbar and centering.</li>
+              </ul>
+            </li>
             <li>Various modern website design rules</li>
             <li>
               More advanced styling with CSS (z-index, rem units, forms,
@@ -270,7 +318,7 @@
               <a
                 href="https://github.com/terabvte/omnifood"
                 class="text-blue-500 underline"
-                >more</a
+                >much more</a
               >
             </li>
           </ul>
@@ -301,7 +349,7 @@
       </div>
     </section>
     <footer class="p-8">
-      <div class="mt-8 mb-6 flex items-center justify-center gap-16">
+      <div class="mb-6 mt-8 flex items-center justify-center gap-16">
         <a class="w-12" href="https://github.com/terabvte" target="_blank">
           <img src="../assets/github.png" alt="github" />
         </a>
@@ -317,7 +365,7 @@
         </a>
       </div>
       <div class="flex flex-col justify-center">
-        <h3 class="mb-2 text-center font-medium">Reach out to me at:</h3>
+        <h3 class="mb-2 text-center font-medium">Reach out to us at:</h3>
         <a
           href="{{url_for('contact_me')}}"
           class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black"
@@ -338,7 +386,6 @@
           "https://github.com/terabvte/web_learn?tab=readme-ov-file#password-generator";
       });
 
-      // script.js
       document.addEventListener("DOMContentLoaded", function () {
         const hamburgerButton = document.getElementById("hamburger-button");
         const closeMenuButton = document.getElementById("close-menu");
