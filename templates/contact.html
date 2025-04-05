@@ -173,7 +173,7 @@
         <h1
           class="mb-2 text-center text-4xl font-medium tracking-tight md:text-5xl lg:text-6xl"
         >
-          Don't hesitate, reach out to me!
+          Don't hesitate, reach out to us!
         </h1>
 
         {% else %}
@@ -198,16 +198,18 @@
               class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="John Doe"
               name="name"
+              required
             />
             <hr />
           </div>
           <div class="mt-4 flex w-full flex-col px-0">
             <label for="basic-url" class="text-4xl">E-mail</label>
             <input
-              type="text"
+              type="email"
               class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="johndoe@gmail.com"
               name="email"
+              required
             />
             <hr />
           </div>
@@ -218,6 +220,7 @@
               class="form-control mt-4 py-2 pl-1 focus:outline-none"
               placeholder="Write here your message"
               name="userMessage"
+              required
             />
             <hr />
           </div>
