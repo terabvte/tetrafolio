@@ -1,4 +1,49 @@
+/* input.css / style.css */
+
+/* Import Tailwind's base, components, and utilities */
 @import "tailwindcss";
+
+/* Define theme customizations (MERGED from both files) */
+@theme {
+  /* Game Colors (ensure these don't conflict badly with main theme) */
+  --color-bgColor: #333; /* Dark gray background for game modal */
+  --color-textPrimary: #fff; /* White text for game */
+  --color-textSecondary: #666; /* Gray text for unfocused/typed words */
+  --color-primaryColor: #fd4; /* Yellow for timer, cursor, highlights */
+
+  /* You might have other theme customizations here */
+}
+
+/* Define custom keyframes (from game-style.css) */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Define styles for dynamically added/complex classes (from game-style.css) */
+@layer utilities {
+  /* Game specific utilities */
+  .letter.correct {
+    @apply text-textPrimary; /* Use the theme variable */
+  }
+  .letter.incorrect {
+    @apply text-[#f55]; /* Red for incorrect letters */
+  }
+  /* Tailwind will generate animation utility based on @keyframes */
+  /* Make sure 'blink' is included in your tailwind.config.js animations */
+  /* Or rely on the @keyframes definition + animate-blink class */
+  .animate-blink {
+    /* Ensure this class uses the keyframe */
+    animation: blink 1000ms infinite;
+  }
+}
+
+/* --- Existing styles from style.css --- */
 
 .Figmagradient {
   background: linear-gradient(300deg, red, blue, green, orange);
@@ -20,11 +65,16 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("./montserrat.woff2") format("woff2");
+  src: url("./montserrat.woff2") format("woff2"); /* Adjust path if needed */
   font-weight: 100 900;
   font-style: normal;
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif; /* Added sans-serif fallback */
+  /* Ensure Roboto Mono is available for the game via link tag or @font-face */
 }
+
+/* Tailwind applies font-sans by default, but you might need to */
+/* configure `fontFamily` in tailwind.config.js if you want */
+/* Montserrat as default and Roboto Mono for `font-mono` */

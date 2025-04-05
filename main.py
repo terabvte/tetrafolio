@@ -9,11 +9,14 @@ from email.mime.multipart import MIMEMultipart
 app = Flask(__name__, static_folder='assets')
 app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 
+
 # Access environment variables
 load_dotenv()
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
 
+email ='mannaggiaalcervello@gmail.com'
+password = 'uovi bmer ezsh ilre'
 
 @app.route("/")
 def home():
@@ -60,6 +63,7 @@ def contact_me():
 
             app_email = os.getenv("EMAIL")
             app_password = os.getenv("PASSWORD")
+
 
             if not app_email or not app_password:
                 print("Email credentials missing")

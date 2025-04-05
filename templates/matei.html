@@ -6,8 +6,13 @@
     <title>Tetrafolio: Matei</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
     <link rel="stylesheet" href="../assets/output.css" />
+    <link rel="preload" href="../assets/matei.webp" as="image" />
   </head>
   <body class="overflow-x-hidden bg-black text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
@@ -19,9 +24,8 @@
         />
       </a>
 
-      <!-- Desktop menu - visible on lg screens and above -->
       <div class="hidden items-center gap-2 lg:flex">
-        <a href="{{url_for('matei')}}">
+        <a href="#">
           <button
             class="cursor-pointer rounded-lg border bg-white p-1.5 px-4 text-black duration-300 hover:bg-blue-500"
           >
@@ -49,9 +53,9 @@
             Jun Bao Matteo Qiu
           </button>
         </a>
-        <a
-          href="#"
-          class="group relative ml-4 inline-flex items-center justify-center overflow-hidden text-nowrap rounded-lg bg-cyan-800 px-4 py-1.5 font-medium tracking-tighter text-white"
+        <button
+          id="open-game-modal"
+          class="group relative ml-4 inline-flex cursor-pointer items-center justify-center overflow-hidden text-nowrap rounded-lg bg-cyan-800 px-4 py-1.5 font-medium tracking-tighter text-white"
         >
           <span
             class="absolute h-0 w-0 rounded-full bg-yellow-600 transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56"
@@ -66,13 +70,12 @@
             >
             <span
               class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              >Coming soon!</span
+              >Type away!</span
             >
           </span>
-        </a>
+        </button>
       </div>
 
-      <!-- Hamburger button - visible below lg screens -->
       <button
         id="hamburger-button"
         class="flex cursor-pointer flex-col items-center justify-center rounded-md bg-white p-2 lg:hidden"
@@ -83,14 +86,13 @@
       </button>
     </nav>
 
-    <!-- Mobile menu - hidden by default -->
     <div
       id="mobile-menu"
       class="fixed inset-0 z-50 hidden bg-[#1c1c1c] pt-4 text-white lg:hidden"
     >
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between">
-          <img class="w-16" src="../assets/logo.webp" />
+          <img class="w-16" src="../assets/logo.webp" alt="Logo" />
           <button
             id="close-menu"
             class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-3xl text-black"
@@ -99,7 +101,7 @@
           </button>
         </div>
         <div class="mt-8 flex flex-col gap-4">
-          <a href="{{url_for('matei')}}">
+          <a href="#">
             <button
               class="w-full cursor-pointer rounded-lg border bg-white p-2 text-left text-black hover:bg-blue-500"
             >
@@ -141,10 +143,10 @@
               name="mobile-state"
               class="peer/active hidden"
             />
-
             <label
+              id="open-game-modal-mobile"
               for="state2"
-              class="block w-full cursor-pointer rounded-lg bg-green-800 p-2 text-left text-white peer-checked/default:block peer-checked/active:hidden"
+              class="block w-full cursor-pointer rounded-lg bg-cyan-800 p-2 text-left text-white peer-checked/default:block peer-checked/active:hidden"
             >
               Change it up!
             </label>
@@ -153,13 +155,87 @@
               for="state1"
               class="hidden w-full cursor-pointer rounded-lg bg-yellow-600 p-2 text-left text-white peer-checked/active:block peer-checked/default:hidden"
             >
-              Coming soon!
+              Type away!
             </label>
           </div>
         </div>
       </div>
     </div>
 
+    <div
+      id="game-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm"
+    >
+      <div
+        class="bg-bgColor relative mx-auto max-w-3xl rounded-lg p-6 shadow-xl"
+      >
+        <button
+          id="close-game-modal"
+          class="absolute -right-3 -top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white text-2xl font-bold text-black hover:bg-gray-300"
+        >
+          &times;
+        </button>
+        <div class="text-textPrimary font-sans text-3xl">
+          <div class="w-full max-w-[650px]">
+            <div class="mb-5 flex items-center gap-2">
+              <svg
+                class="fill-primaryColor w-[40px]"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 222.383 222.383"
+              >
+                <g>
+                  <path
+                    d="M107.589,99.843l3.498,3.446l3.509-3.435c3.64-3.564,35.754-35.124,42.249-45.691c4.221-6.865,6.103-13.756,6.103-22.343 C162.947,10.93,147.252,0,131.748,0c-8.532,0-15.62,2.934-20.61,8.404C107.319,4.226,100.901,0,90.568,0 c-18.33,0-31.132,13.085-31.132,31.82c0,8.55,1.893,15.44,6.136,22.343C72.063,64.725,103.972,96.279,107.589,99.843z"
+                  />
+                  <path
+                    d="M114.794,122.54l-3.498-3.446l-3.509,3.435c-3.64,3.564-35.753,35.123-42.249,45.691 c-4.22,6.865-6.102,13.757-6.102,22.343c0,20.891,15.695,31.82,31.199,31.82c8.53,0,15.618-2.935,20.609-8.405 c3.818,4.179,10.236,8.405,20.57,8.405c18.33,0,31.132-13.085,31.132-31.82c0-8.548-1.893-15.438-6.136-22.343 C150.319,157.658,118.411,126.104,114.794,122.54z"
+                  />
+                  <path
+                    d="M213.978,111.138c4.179-3.818,8.405-10.236,8.405-20.57c0-18.329-13.085-31.131-31.819-31.131 c-8.551,0-15.441,1.893-22.343,6.136c-10.562,6.491-42.117,38.399-45.681,42.017l-3.446,3.498l3.435,3.509 c3.564,3.64,35.124,35.754,45.691,42.249c6.863,4.22,13.755,6.102,22.344,6.102c20.89,0,31.819-15.694,31.819-31.198 C222.383,123.217,219.448,116.129,213.978,111.138z"
+                  />
+                  <path
+                    d="M99.843,114.794l3.446-3.498l-3.435-3.509c-3.564-3.64-35.123-35.754-45.69-42.249c-6.863-4.22-13.755-6.102-22.344-6.102 C10.93,59.437,0,75.131,0,90.635c0,8.531,2.935,15.619,8.406,20.61C4.227,115.063,0,121.481,0,131.815 c0,18.329,13.085,31.131,31.82,31.131c8.551,0,15.441-1.893,22.343-6.136C64.726,150.319,96.28,118.411,99.843,114.794z"
+                  />
+                </g>
+              </svg>
+              <h1 class="text-primaryColor text-3xl font-bold">TetraType</h1>
+            </div>
+            <div id="header" class="mb-8 mt-5 grid grid-cols-2 px-1.5">
+              <div id="info" class="text-primaryColor"></div>
+              <div id="buttons" class="text-right">
+                <button
+                  id="newGameBtn"
+                  class="cursor-pointer rounded-[5px] bg-white/20 px-[20px] py-[5px] text-white/50 transition hover:bg-white/40 hover:text-white/80"
+                >
+                  New game
+                </button>
+              </div>
+            </div>
+            <div
+              id="game"
+              tabindex="0"
+              class="group peer relative h-[110px] overflow-hidden leading-[35px] focus:outline-none"
+            >
+              <div
+                id="words"
+                class="text-textSecondary blur-[5px] transition-all duration-300 group-focus:blur-none peer-[.over]:opacity-50 peer-[.over]:blur-none"
+              ></div>
+              <div
+                id="cursor"
+                class="animate-blink bg-primaryColor fixed hidden h-[1.8rem] w-[2px] group-focus:block peer-[.over]:hidden"
+              ></div>
+              <div
+                id="focus-error"
+                class="absolute inset-0 pt-[35px] text-center group-focus:hidden peer-[.over]:hidden"
+              >
+                Click here to focus
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section
       class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-16 p-4 sm:flex-row sm:p-16"
     >
@@ -311,32 +387,35 @@
         </a>
       </div>
     </footer>
+
     <script>
+      // --- Hamburger Menu Logic ---
       document.addEventListener("DOMContentLoaded", function () {
         const hamburgerButton = document.getElementById("hamburger-button");
         const closeMenuButton = document.getElementById("close-menu");
         const mobileMenu = document.getElementById("mobile-menu");
 
-        // Function to open menu
         function openMenu() {
+          if (!mobileMenu) return;
           mobileMenu.classList.remove("hidden");
           mobileMenu.classList.add("block");
           document.body.classList.add("overflow-hidden");
         }
 
-        // Function to close menu
         function closeMenu() {
+          if (!mobileMenu) return;
           mobileMenu.classList.remove("block");
           mobileMenu.classList.add("hidden");
           document.body.classList.remove("overflow-hidden");
         }
 
-        hamburgerButton.addEventListener("click", openMenu);
-        closeMenuButton.addEventListener("click", closeMenu);
+        if (hamburgerButton)
+          hamburgerButton.addEventListener("click", openMenu);
+        if (closeMenuButton)
+          closeMenuButton.addEventListener("click", closeMenu);
 
-        // Handle resize events
         window.addEventListener("resize", function () {
-          // If window width is lg breakpoint (1024px) or larger and menu is open, close it
+          if (!mobileMenu) return;
           if (
             window.innerWidth >= 1024 &&
             mobileMenu.classList.contains("block")
@@ -344,7 +423,434 @@
             closeMenu();
           }
         });
+      }); // End DOMContentLoaded for Hamburger
+
+      // ======================================================
+      // === Typing Game & Modal Logic START ================
+      // ======================================================
+
+      // --- Game Setup & Constants ---
+      const words =
+        "in one good real one not school set they state high life consider on and not come what also for set point can want as while with of order child about school thing never hold find order each too between program work end you home place around while place problem end begin interest while public or where see time those increase interest be give end think seem small as both another a child same eye you between way do who into again good fact than under very head become real possible some write know however late each that with because that place nation only for each change form consider we would interest with world so order or run more open that large write turn never over open each over change still old take hold need give by consider line only leave while what set up number part form want against great problem can because head so first this here would course become help year first end want both fact public long word down also long for without new turn against the because write seem line interest call not if line thing what work people way may old consider leave hold want life between most place may if go who need fact such program where which end off child down change to from people high during people find to however into small new general it do that could old for last get another hand much eye great no work and with but good there last think can around use like number never since world need what we around part show new come seem while some and since still small these you general which seem will place come order form how about just also they with state late use both early too lead general seem there point take general seem few out like might under if ask while such interest feel word right again how about system such between late want fact up problem stand new say move a lead small however large public out by eye here over so be way use like say people work for since interest so face order school good not most run problem group run she late other problem real form what just high no man do under would to each too end point give number child through so this large see get form also all those course to work during about he plan still so like down he look down where course at who plan way so since come against he all who at world because while so few last these mean take house who old way large no first too now off would in this course present order home public school back own little about he develop of do over help day house stand present another by few come that down last or use say take would each even govern play around back under some line think she even when from do real problem between long as there school do as mean to all on other good may from might call world thing life turn of he look last problem after get show want need thing old other during be again develop come from consider the now number say life interest to system only group world same state school one problem between for turn run at very against eye must go both still all a as so after play eye little be those should out after which these both much house become both school this he real and may mean time by real number other as feel at end ask plan come turn by all head increase he present increase use stand after see order lead than system here ask in of look point little too without each for both but right we come world much own set we right off long those stand go both but under now must real general then before with much those at no of we only back these person plan from run new as own take early just increase only look open follow get that on system the mean plan man over it possible if most late line would first without real hand say turn point small set at in system however to be home show new again come under because about show face child know person large program how over could thing from out world while nation stand part run have look what many system order some one program you great could write day do he any also where child late face eye run still again on by as call high the must by late little mean never another seem to leave because for day against public long number word about after much need open change also".split(
+          " ",
+        );
+      const wordsCount = words.length;
+      const gameTime = 15 * 1000; // 15 seconds
+      window.timer = null;
+      window.gameStart = null;
+
+      // --- Modal Element References ---
+      const gameModal = document.getElementById("game-modal");
+      const openGameModalBtn = document.getElementById("open-game-modal");
+      const openGameModalBtnMobile = document.getElementById(
+        "open-game-modal-mobile",
+      );
+      const closeGameModalBtn = document.getElementById("close-game-modal");
+      const gameElementForFocus = document.getElementById("game");
+      const newGameBtn = document.getElementById("newGameBtn"); // Inside modal
+
+      // --- Basic Helper Functions ---
+      function addClass(el, name) {
+        if (el) el.classList.add(name);
+      }
+      function removeClass(el, name) {
+        if (el) el.classList.remove(name);
+      }
+      function randomWord() {
+        const i = Math.floor(Math.random() * wordsCount);
+        return words[i];
+      }
+      function formatWord(word) {
+        return `<div class="word inline-block font-mono mx-[5px]"><span class="letter">${word.split("").join('</span><span class="letter">')}</span></div>`;
+      }
+
+      // --- WPM Calculation Function ---
+      function getWpm() {
+        const wordsElements = [...document.querySelectorAll("#game .word")];
+        const currentWordElement = document.querySelector(
+          "#game .word.current",
+        );
+        const currentWordIndex = currentWordElement
+          ? wordsElements.indexOf(currentWordElement)
+          : wordsElements.length;
+        const typedWords = wordsElements.slice(0, currentWordIndex);
+        let correctWordsCount = 0;
+        typedWords.forEach((word) => {
+          const letters = [...word.children];
+          if (letters.length === 0) return;
+          const hasTypedLetters = letters.some(
+            (l) =>
+              l.classList.contains("correct") ||
+              l.classList.contains("incorrect") ||
+              l.classList.contains("extra"),
+          );
+          if (!hasTypedLetters) return;
+          let isCorrect = true;
+          let hasIncorrectOrExtra = false;
+          letters.forEach((letter) => {
+            if (
+              letter.classList.contains("incorrect") ||
+              letter.classList.contains("extra")
+            )
+              hasIncorrectOrExtra = true;
+            if (
+              !letter.classList.contains("extra") &&
+              !letter.classList.contains("correct")
+            )
+              isCorrect = false;
+          });
+          if (isCorrect && !hasIncorrectOrExtra) correctWordsCount++;
+        });
+        const endTime = new Date().getTime();
+        const elapsedTimeMs = window.gameStart
+          ? endTime - window.gameStart
+          : gameTime;
+        const elapsedTimeMinutes = Math.max(elapsedTimeMs / 60000, 1 / 60);
+        return Math.round(correctWordsCount / elapsedTimeMinutes);
+      }
+
+      // --- Game State Functions (gameOver, newGame) ---
+      function gameOver() {
+        if (window.timer) {
+          clearInterval(window.timer);
+          window.timer = null;
+        }
+        const gameDiv = document.getElementById("game");
+        const infoDiv = document.getElementById("info");
+        const cursorEl = document.getElementById("cursor");
+        if (gameDiv) addClass(gameDiv, "over");
+        const result = getWpm();
+        if (infoDiv) infoDiv.innerHTML = `WPM: ${result}`;
+        if (cursorEl) cursorEl.style.visibility = "hidden";
+      }
+      function newGame() {
+        if (window.timer) {
+          clearInterval(window.timer);
+          window.timer = null;
+        }
+        window.gameStart = null;
+        const wordsContainer = document.getElementById("words");
+        const gameDiv = document.getElementById("game");
+        const infoDiv = document.getElementById("info");
+        const cursorEl = document.getElementById("cursor");
+        if (gameDiv) removeClass(gameDiv, "over");
+        if (wordsContainer) {
+          wordsContainer.innerHTML = "";
+          for (let i = 0; i < 200; i++) {
+            wordsContainer.innerHTML += formatWord(randomWord());
+          }
+          wordsContainer.style.marginTop = "0px";
+          wordsContainer.querySelectorAll(".word, .letter").forEach((el) => {
+            removeClass(el, "current");
+            removeClass(el, "correct");
+            removeClass(el, "incorrect");
+            removeClass(el, "extra");
+          });
+          const firstWord = wordsContainer.querySelector(".word");
+          if (firstWord) {
+            addClass(firstWord, "current");
+            const firstLetter = firstWord.querySelector(".letter");
+            if (firstLetter) {
+              addClass(firstLetter, "current");
+            }
+          }
+        }
+        if (infoDiv) infoDiv.innerHTML = gameTime / 1000 + "";
+        if (cursorEl) cursorEl.style.visibility = "hidden";
+      }
+
+      // --- Cursor Position Update Function ---
+      function updateCursorPosition() {
+        const finalCurrentLetter = document.querySelector(
+          "#game .letter.current",
+        );
+        const finalCurrentWord = document.querySelector("#game .word.current");
+        const cursorElement = document.getElementById("cursor");
+        const gameElement = document.getElementById("game");
+        if (
+          !finalCurrentWord ||
+          !cursorElement ||
+          !gameElement ||
+          gameElement.classList.contains("over")
+        ) {
+          if (cursorElement) cursorElement.style.visibility = "hidden";
+          return;
+        }
+        let targetElement = finalCurrentLetter;
+        let position = "left";
+        if (!targetElement) {
+          targetElement = finalCurrentWord.querySelector(
+            ".letter:not(.extra):last-child",
+          );
+          if (targetElement) position = "right";
+          else {
+            targetElement =
+              finalCurrentWord.querySelector(".letter:last-child");
+            if (targetElement) position = "right";
+            else {
+              targetElement = finalCurrentWord;
+              position = "left";
+            }
+          }
+        }
+        cursorElement.style.visibility = "hidden";
+        if (targetElement) {
+          try {
+            const clientRects = targetElement.getClientRects();
+            if (clientRects.length > 0) {
+              const firstRect = clientRects[0];
+              const lastRect = clientRects[clientRects.length - 1];
+              const cursorTop = firstRect.top + 1;
+              let cursorLeft =
+                position === "left" ? firstRect.left : lastRect.right;
+              cursorElement.style.top = cursorTop + "px";
+              cursorElement.style.left = cursorLeft + "px";
+              cursorElement.style.visibility = "visible";
+            } else {
+              throw new Error("Element has no client rects.");
+            }
+          } catch (e) {
+            console.error("Error positioning cursor:", e, targetElement);
+            cursorElement.style.visibility = "hidden";
+          }
+        } else {
+          cursorElement.style.visibility = "hidden";
+        }
+      }
+
+      // --- Main Keydown Event Listener ---
+      document.getElementById("game")?.addEventListener("keydown", (ev) => {
+        const key = ev.key;
+        const gameElement = document.getElementById("game");
+        const wordsContainer = document.getElementById("words");
+        const cursorElement = document.getElementById("cursor");
+        const infoDiv = document.getElementById("info");
+        if (
+          !gameElement ||
+          !wordsContainer ||
+          !cursorElement ||
+          gameElement.classList.contains("over")
+        )
+          return;
+        const currentWordElement = gameElement.querySelector(".word.current");
+        let currentLetterElement = gameElement.querySelector(".letter.current");
+        const isLetter = key.length === 1 && key !== " ";
+        const isSpace = key === " ";
+        const isBackspace = key === "Backspace";
+        const isShift = key === "Shift";
+        if (isShift) {
+          ev.preventDefault();
+          return;
+        }
+        if (isSpace || isBackspace) {
+          ev.preventDefault();
+        }
+        if (
+          !window.timer &&
+          currentWordElement &&
+          (isLetter || isSpace) &&
+          !window.gameStart
+        ) {
+          window.gameStart = new Date().getTime();
+          window.timer = setInterval(() => {
+            if (!window.gameStart) return;
+            const currentTime = new Date().getTime();
+            const msPassed = currentTime - window.gameStart;
+            const sLeft = Math.max(0, Math.round((gameTime - msPassed) / 1000));
+            if (infoDiv) infoDiv.innerHTML = sLeft + "";
+            if (sLeft <= 0) {
+              gameOver();
+            }
+          }, 1000);
+        }
+        if (isLetter && currentWordElement) {
+          if (currentLetterElement) {
+            addClass(
+              currentLetterElement,
+              key === currentLetterElement.innerHTML ? "correct" : "incorrect",
+            );
+            removeClass(currentLetterElement, "current");
+            const nextLetter = currentLetterElement.nextElementSibling;
+            if (nextLetter && nextLetter.classList.contains("letter")) {
+              addClass(nextLetter, "current");
+            }
+          } else {
+            const iL = document.createElement("span");
+            iL.innerHTML = key;
+            iL.className = "letter incorrect extra";
+            currentWordElement.appendChild(iL);
+          }
+        } else if (isSpace && currentWordElement) {
+          const lettersInWord = currentWordElement.querySelectorAll(
+            ".letter:not(.extra)",
+          );
+          let foundCurrent = !currentLetterElement;
+          lettersInWord.forEach((letter) => {
+            if (letter === currentLetterElement) foundCurrent = true;
+            if (
+              foundCurrent &&
+              !letter.classList.contains("correct") &&
+              !letter.classList.contains("incorrect")
+            ) {
+              addClass(letter, "incorrect");
+            }
+            removeClass(letter, "current");
+          });
+          removeClass(currentWordElement, "current");
+          const nextWord = currentWordElement.nextElementSibling;
+          if (nextWord && nextWord.classList.contains("word")) {
+            addClass(nextWord, "current");
+            const fL = nextWord.querySelector(".letter");
+            if (fL) {
+              addClass(fL, "current");
+            }
+          } else {
+            console.log("End of words on space.");
+            if (window.timer) {
+              const rW = document.querySelectorAll(
+                "#game .word.current ~ .word",
+              );
+              if (rW.length === 0) {
+                gameOver();
+              }
+            }
+          }
+        } else if (isBackspace && currentWordElement) {
+          const lastExtraLetter = currentWordElement.querySelector(
+            ".letter.extra:last-child",
+          );
+          if (lastExtraLetter) {
+            currentWordElement.removeChild(lastExtraLetter);
+          } else if (currentLetterElement) {
+            const prevLetter = currentLetterElement.previousElementSibling;
+            removeClass(currentLetterElement, "current");
+            removeClass(currentLetterElement, "correct");
+            removeClass(currentLetterElement, "incorrect");
+            if (prevLetter && prevLetter.classList.contains("letter")) {
+              addClass(prevLetter, "current");
+              removeClass(prevLetter, "incorrect");
+              removeClass(prevLetter, "correct");
+            } else {
+              const pW = currentWordElement.previousElementSibling;
+              if (pW && pW.classList.contains("word")) {
+                removeClass(currentWordElement, "current");
+                addClass(pW, "current");
+                let tL = pW.querySelector(".letter:not(.extra):last-child");
+                if (tL) {
+                  addClass(tL, "current");
+                  removeClass(tL, "correct");
+                  removeClass(tL, "incorrect");
+                }
+              }
+            }
+          } else {
+            let targetLetter = currentWordElement.querySelector(
+              ".letter:not(.extra):last-child",
+            );
+            if (targetLetter) {
+              addClass(targetLetter, "current");
+              removeClass(targetLetter, "correct");
+              removeClass(targetLetter, "incorrect");
+            } else {
+              const pW = currentWordElement.previousElementSibling;
+              if (pW && pW.classList.contains("word")) {
+                removeClass(currentWordElement, "current");
+                addClass(pW, "current");
+                let tL = pW.querySelector(".letter:not(.extra):last-child");
+                if (tL) {
+                  addClass(tL, "current");
+                  removeClass(tL, "incorrect");
+                  removeClass(tL, "correct");
+                }
+              }
+            }
+          }
+        }
+        const activeWordForScroll = document.querySelector(
+          "#game .word.current",
+        );
+        if (activeWordForScroll && wordsContainer && gameElement) {
+          const gameRect = gameElement.getBoundingClientRect();
+          const wordRect = activeWordForScroll.getBoundingClientRect();
+          const currentMarginTop = parseInt(
+            wordsContainer.style.marginTop || "0px",
+          );
+          const lineHeight = 35; /* *** VERIFY *** */
+          if (wordRect.bottom > gameRect.bottom - lineHeight / 2) {
+            wordsContainer.style.marginTop =
+              currentMarginTop - lineHeight + "px";
+          } else if (wordRect.top < gameRect.top && currentMarginTop < 0) {
+            wordsContainer.style.marginTop =
+              currentMarginTop + lineHeight + "px";
+          }
+        }
+        requestAnimationFrame(updateCursorPosition);
       });
+
+      // --- Modal Control Functions & Listeners ---
+      function openGameModal() {
+        if (gameModal && gameElementForFocus) {
+          gameModal.classList.remove("hidden");
+          gameModal.classList.add("flex");
+          document.body.classList.add("overflow-hidden");
+          setTimeout(() => {
+            gameElementForFocus.focus();
+            updateCursorPosition();
+          }, 100);
+        }
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenu && mobileMenu.classList.contains("block")) {
+          mobileMenu.classList.remove("block");
+          mobileMenu.classList.add("hidden");
+          document.body.classList.remove("overflow-hidden");
+          if (gameModal && gameModal.classList.contains("flex")) {
+            document.body.classList.add("overflow-hidden");
+          }
+        }
+      }
+      function closeGameModal() {
+        if (gameModal && gameElementForFocus) {
+          gameModal.classList.add("hidden");
+          gameModal.classList.remove("flex");
+          document.body.classList.remove("overflow-hidden");
+          const cursorEl = document.getElementById("cursor");
+          if (cursorEl) cursorEl.style.visibility = "hidden";
+          if (typeof gameOver === "function") gameOver();
+          if (typeof newGame === "function") newGame();
+          gameElementForFocus.blur();
+        }
+      }
+      if (openGameModalBtn)
+        openGameModalBtn.addEventListener("click", openGameModal);
+      if (openGameModalBtnMobile)
+        openGameModalBtnMobile.addEventListener("click", openGameModal);
+      if (closeGameModalBtn)
+        closeGameModalBtn.addEventListener("click", closeGameModal);
+      if (gameModal) {
+        gameModal.addEventListener("click", (event) => {
+          if (event.target === gameModal) {
+            closeGameModal();
+          }
+        });
+      }
+      if (newGameBtn) {
+        newGameBtn.addEventListener("click", () => {
+          if (typeof newGame === "function") newGame();
+          if (gameElementForFocus) {
+            setTimeout(() => {
+              gameElementForFocus.focus();
+              updateCursorPosition();
+            }, 50);
+          }
+        });
+      }
+
+      // --- Initial Game Setup On Load ---
+      newGame();
+
+      // ======================================================
+      // === Typing Game & Modal Logic END ==================
+      // ======================================================
     </script>
   </body>
 </html>
