@@ -6,15 +6,11 @@
     <title>Tetrafolio: Marco</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="../assets/output.css" />
     <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
     <link rel="preload" href="../assets/marco-cropped.webp" as="image" />
   </head>
-  <body class="overflow-x-hidden bg-black font-[Montserrat] text-white">
+  <body class="overflow-x-hidden bg-black text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
       <a href="{{url_for('home')}}">
         <img
@@ -172,7 +168,7 @@
     >
       <img
         src="../assets/marco-cropped.webp"
-        class="w-[200px] min-h-360px rounded-[47%] border-4 border-green-600 lg:w-[250px]"
+        class="min-h-360px w-[200px] rounded-[47%] border-4 border-green-600 lg:w-[250px]"
         alt="avatar"
       />
       <div class="w-[55%]">
@@ -213,7 +209,7 @@
           </a>
           <a
             class="w-12"
-            href="https://www.linkedin.com/in/marco-fediuc-9464b0238/"
+            href="https://www.linkedin.com/in/marco-fediuc/"
             taget="_blank"
           >
             <img src="../assets/linkedin.png" alt="linkedin" />
@@ -239,8 +235,8 @@
           moment. <br />
         </p>
         <p class="mb-4 font-medium">
-          Planning to learn the basics of React soon to upgrade my UIs through
-          the use of components.
+          Currently learning React and upgrading my web UIs through the use of
+          components.
         </p>
         <div class="mt-4 flex flex-wrap gap-6">
           <img class="w-8" src="../assets/html.png" alt="HTML Icon" />
@@ -248,7 +244,11 @@
           <img class="w-8" src="../assets/js.png" alt="Javascript Icon" />
           <img class="w-8" src="../assets/ts.png" alt="Typescript Icon" />
           <img class="w-10" src="../assets/tailwind.png" alt="Tailwind Icon" />
-          <img class="w-8 hover:motion-safe:animate-spin" src="../assets/react.png" alt="React Icon" />
+          <img
+            class="w-8 hover:motion-safe:animate-spin"
+            src="../assets/react.png"
+            alt="React Icon"
+          />
         </div>
       </aside>
       <aside

@@ -61,7 +61,6 @@
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-spin: spin 1s linear infinite;
-    --animate-bounce: bounce 1s infinite;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -562,9 +561,6 @@
   .h-1 {
     height: calc(var(--spacing) * 1);
   }
-  .h-4 {
-    height: calc(var(--spacing) * 4);
-  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -772,9 +768,6 @@
   }
   .transform-none {
     transform: none;
-  }
-  .animate-bounce {
-    animation: var(--animate-bounce);
   }
   .animate-none {
     animation: none;
@@ -1172,9 +1165,6 @@
   }
   .gap-16 {
     gap: calc(var(--spacing) * 16);
-  }
-  .gap-44 {
-    gap: calc(var(--spacing) * 44);
   }
   .gap-\[25\%\] {
     gap: 25%;
@@ -1869,9 +1859,6 @@
   .p-12 {
     padding: calc(var(--spacing) * 12);
   }
-  .p-40 {
-    padding: calc(var(--spacing) * 40);
-  }
   .px-0 {
     padding-inline: calc(var(--spacing) * 0);
   }
@@ -1889,12 +1876,6 @@
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
-  }
-  .pb-2 {
-    padding-bottom: calc(var(--spacing) * 2);
-  }
-  .pb-4 {
-    padding-bottom: calc(var(--spacing) * 4);
   }
   .pl-1 {
     padding-left: calc(var(--spacing) * 1);
@@ -1940,9 +1921,6 @@
   }
   .align-top {
     vertical-align: top;
-  }
-  .font-\[Montserrat\] {
-    font-family: Montserrat;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -3099,6 +3077,15 @@
     background-position: 0% 80%;
   }
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("./montserrat.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+body {
+  font-family: "Montserrat";
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -3433,15 +3420,5 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: none;
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }

@@ -17,3 +17,14 @@
     background-position: 0% 80%;
   }
 }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./montserrat.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+body {
+  font-family: "Montserrat";
+}
