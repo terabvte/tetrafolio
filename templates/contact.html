@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="../assets/output.css" />
     <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body class="overflow-x-hidden bg-black text-white">
     <nav class="flex items-center justify-between gap-4 border-b p-4">
@@ -176,12 +177,13 @@
           </div>
         </div>
         <div class="mt-8 flex flex-col text-center">
+          <div class="g-recaptcha" data-sitekey="{{ token }}"></div>
           <button
-          class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black"
-          type="submit"
+            class="mx-auto cursor-pointer rounded-lg bg-white p-2 px-4 text-center text-black"
+            type="submit"
           >
-          Send
-        </button>
+            Send
+          </button>
         </div>
       </form>
     </section>
@@ -218,6 +220,29 @@
             closeMenu();
           }
         });
+      });
+
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const captchaResponse = grecaptcha.getResponse();
+        if (captchaResponse.length === 0) {
+          alert("Please complete the CAPTCHA");
+          return;
+        }
+
+        const fd = new FormData(e.target);
+        const params = new URLSearchParams(fd);
+
+        fetch("http://tetrafolio.tech/contact-me-form", {
+          method: "POST",
+          body: params,
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data))
+          .catch((err) => console.error(err));
       });
     </script>
   </body>

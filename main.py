@@ -14,9 +14,7 @@ app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 load_dotenv()
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
-
-email ='mannaggiaalcervello@gmail.com'
-password = 'uovi bmer ezsh ilre'
+captchApass = os.getenv("TOKEN")
 
 @app.route("/")
 def home():
@@ -69,7 +67,6 @@ def contact_me():
                 print("Email credentials missing")
                 return render_template('contact.html', msg_sent=False, error="Configuration error: Email credentials missing")
 
-            # Properly format email with MIME
             msg = MIMEMultipart()
             msg['From'] = app_email
             msg['To'] = app_email
@@ -88,7 +85,7 @@ def contact_me():
             print(f"Error sending email: {e}")
             return render_template('contact.html', msg_sent=False, error=str(e))
 
-    return render_template('contact.html', msg_sent=False)
+    return render_template('contact.html', msg_sent=False, token=captchApass)
 
 
 if __name__ == "__main__":
