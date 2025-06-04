@@ -9,7 +9,7 @@ from email.mime.multipart import MIMEMultipart
 # Load environment variables from .env file for local development
 load_dotenv()
 
-app = Flask(__name__, static_folder='assets') # Your static folder
+app = Flask(__name__, static_folder='assets', static_url_path='/assets')
 # Vercel will use its own environment variables for deployed app
 app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 
