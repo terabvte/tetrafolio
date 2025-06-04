@@ -11,7 +11,10 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
-    <link rel="stylesheet" href="../assets/output.css" />
+    <link
+      href="{{ url_for('static', filename='output.css') }}"
+      rel="stylesheet"
+    />
     <link rel="preload" href="../assets/lorenzo.webp" as="image" />
   </head>
   <body class="overflow-x-hidden bg-black text-white">
