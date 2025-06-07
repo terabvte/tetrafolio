@@ -6,7 +6,10 @@
     <title>Contact me</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="../assets/output.css" />
+    <link
+      href="{{ url_for('static', filename='output.css') }}"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/x-icon" href="../assets/logo.webp" />
   </head>
   <body class="overflow-x-hidden bg-black text-white">
@@ -48,27 +51,6 @@
           >
             Jun Bao Matteo Qiu
           </button>
-        </a>
-        <a
-          href="#"
-          class="group relative ml-4 inline-flex items-center justify-center overflow-hidden text-nowrap rounded-lg bg-green-800 px-4 py-1.5 font-medium tracking-tighter text-white"
-        >
-          <span
-            class="absolute h-0 w-0 rounded-full bg-yellow-600 transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56"
-          ></span>
-          <span
-            class="absolute inset-0 -mt-1 h-full w-full rounded-lg bg-gradient-to-b from-transparent via-transparent to-gray-700 opacity-30"
-          ></span>
-          <span class="relative">
-            <span
-              class="block opacity-100 transition-opacity duration-300 group-hover:opacity-0"
-              >Change it up!</span
-            >
-            <span
-              class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              >Coming soon!</span
-            >
-          </span>
         </a>
       </div>
 
@@ -127,35 +109,6 @@
               Jun Bao Matteo Qiu
             </button>
           </a>
-          <div class="w-full">
-            <input
-              type="radio"
-              id="state1"
-              name="mobile-state"
-              class="peer/default hidden"
-              checked
-            />
-            <input
-              type="radio"
-              id="state2"
-              name="mobile-state"
-              class="peer/active hidden"
-            />
-
-            <label
-              for="state2"
-              class="block w-full cursor-pointer rounded-lg bg-green-800 p-2 text-left text-white peer-checked/default:block peer-checked/active:hidden"
-            >
-              Change it up!
-            </label>
-
-            <label
-              for="state1"
-              class="hidden w-full cursor-pointer rounded-lg bg-yellow-600 p-2 text-left text-white peer-checked/active:block peer-checked/default:hidden"
-            >
-              Coming soon!
-            </label>
-          </div>
         </div>
       </div>
     </div>

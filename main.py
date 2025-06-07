@@ -2,17 +2,20 @@ from flask import Flask, render_template, url_for, session, request
 import smtplib
 import random
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv # Make sure this is in requirements.txt
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-app = Flask(__name__, static_folder='assets')
+# Load environment variables from .env file for local development
+load_dotenv()
+
+app = Flask(__name__, static_folder='assets', static_url_path='/assets')
+# Vercel will use its own environment variables for deployed app
 app.secret_key = os.getenv("SECRET_KEY", os.urandom(24))
 
-# Access environment variables
-load_dotenv()
-email = os.getenv("EMAIL")
-password = os.getenv("PASSWORD")
+# Access environment variables (EMAIL and PASSWORD should be set in Vercel UI)
+# email = os.getenv("EMAIL") # Not strictly needed at global scope here
+# password = os.getenv("PASSWORD") # Not strictly needed at global scope here
 
 
 @app.route("/")
@@ -48,8 +51,6 @@ def matteo():
     return render_template("matteo.html")
 
 
-
-
 @app.route("/contact-me-form", methods=['POST', 'GET'])
 def contact_me():
     if request.method == "POST":
@@ -58,17 +59,17 @@ def contact_me():
             user_email = request.form["email"]
             message = request.form["userMessage"]
 
+            # These will be fetched from Vercel's environment variables when deployed
             app_email = os.getenv("EMAIL")
             app_password = os.getenv("PASSWORD")
 
             if not app_email or not app_password:
-                print("Email credentials missing")
+                print("Email credentials missing. Ensure EMAIL and PASSWORD are set in Vercel environment variables.")
                 return render_template('contact.html', msg_sent=False, error="Configuration error: Email credentials missing")
 
-            # Properly format email with MIME
             msg = MIMEMultipart()
             msg['From'] = app_email
-            msg['To'] = app_email
+            msg['To'] = app_email # Sending to yourself
             msg['Subject'] = "Contact me form blog"
 
             body = f"Name: {name}\nEmail: {user_email}\nMessage: {message}"
@@ -78,7 +79,7 @@ def contact_me():
                 server.starttls()
                 server.login(app_email, app_password)
                 server.send_message(msg)
-                return render_template('contact.html', msg_sent=True)
+            return render_template('contact.html', msg_sent=True)
 
         except Exception as e:
             print(f"Error sending email: {e}")
@@ -87,5 +88,6 @@ def contact_me():
     return render_template('contact.html', msg_sent=False)
 
 
+# This part is for local development only. Vercel will not run this.
 if __name__ == "__main__":
     app.run(debug=True)
